@@ -27,3 +27,8 @@
     5.Download the glad.zip file.
     6.Copy the folders inside the include folder into system include directory.(cp -R include/* /usr/include/)
     7.Copy the glad.c inside your src folder of your current direcotry or to your current working directory.
+
+## OpenGL Set up: GLEW Library
+
+    1. cd /usr/local/lib/
+    2. git clone https://github.com/nigels-com/glew.git
