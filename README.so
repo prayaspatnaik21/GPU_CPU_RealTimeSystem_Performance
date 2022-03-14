@@ -32,3 +32,5 @@
 
     1. cd /usr/local/lib/
     2. git clone https://github.com/nigels-com/glew.git
+
+Command to run the OpenGL Proram - g++ OpenGLFuntionality.cpp -o hw_opengl -lGL -lGLEW -lGLU -lglut -lglfw -ldl 
