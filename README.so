@@ -20,3 +20,10 @@
 ## OpenGL Setup: GLAD Library
 
     1.[WebService](https://glad.dav1d.de)
+    2.Set the Language to C++ and Choose OpenGL Specifications.
+    3.Select gl API version of atleast 3.3 and set the profile to Core.
+    4.Check that the Generate a loader option is selected.
+    5.Click Generate to produce the resulting library files.
+    5.Download the glad.zip file.
+    6.Copy the folders inside the include folder into system include directory.(cp -R include/* /usr/include/)
+    7.Copy the glad.c inside your src folder of your current direcotry or to your current working directory.
