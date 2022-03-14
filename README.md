@@ -17,4 +17,6 @@
     5. make
     6. sudo make install
 
-## OpenGL Setup: GLAD Librar
+## OpenGL Setup: GLAD Library
+
+    1.[WebService](https://glad.dav1d.de/)
