@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance
+CMAKE_SOURCE_DIR = /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/build
+CMAKE_BINARY_DIR = /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/build/CMakeFiles /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/build/CMakeFiles /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sampleCode
+# Target rules for targets named OpenCV_Functionality
 
 # Build rule for target.
-sampleCode: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sampleCode
-.PHONY : sampleCode
+OpenCV_Functionality: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OpenCV_Functionality
+.PHONY : OpenCV_Functionality
 
 # fast build rule for target.
-sampleCode/fast:
-	$(MAKE) -f CMakeFiles/sampleCode.dir/build.make CMakeFiles/sampleCode.dir/build
-.PHONY : sampleCode/fast
+OpenCV_Functionality/fast:
+	$(MAKE) -f CMakeFiles/OpenCV_Functionality.dir/build.make CMakeFiles/OpenCV_Functionality.dir/build
+.PHONY : OpenCV_Functionality/fast
 
-sampleCode.o: sampleCode.cpp.o
+OpenCV_Functionality.o: OpenCV_Functionality.cpp.o
 
-.PHONY : sampleCode.o
+.PHONY : OpenCV_Functionality.o
 
 # target to build an object file
-sampleCode.cpp.o:
-	$(MAKE) -f CMakeFiles/sampleCode.dir/build.make CMakeFiles/sampleCode.dir/sampleCode.cpp.o
-.PHONY : sampleCode.cpp.o
+OpenCV_Functionality.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenCV_Functionality.dir/build.make CMakeFiles/OpenCV_Functionality.dir/OpenCV_Functionality.cpp.o
+.PHONY : OpenCV_Functionality.cpp.o
 
-sampleCode.i: sampleCode.cpp.i
+OpenCV_Functionality.i: OpenCV_Functionality.cpp.i
 
-.PHONY : sampleCode.i
+.PHONY : OpenCV_Functionality.i
 
 # target to preprocess a source file
-sampleCode.cpp.i:
-	$(MAKE) -f CMakeFiles/sampleCode.dir/build.make CMakeFiles/sampleCode.dir/sampleCode.cpp.i
-.PHONY : sampleCode.cpp.i
+OpenCV_Functionality.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenCV_Functionality.dir/build.make CMakeFiles/OpenCV_Functionality.dir/OpenCV_Functionality.cpp.i
+.PHONY : OpenCV_Functionality.cpp.i
 
-sampleCode.s: sampleCode.cpp.s
+OpenCV_Functionality.s: OpenCV_Functionality.cpp.s
 
-.PHONY : sampleCode.s
+.PHONY : OpenCV_Functionality.s
 
 # target to generate assembly for a file
-sampleCode.cpp.s:
-	$(MAKE) -f CMakeFiles/sampleCode.dir/build.make CMakeFiles/sampleCode.dir/sampleCode.cpp.s
-.PHONY : sampleCode.cpp.s
+OpenCV_Functionality.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenCV_Functionality.dir/build.make CMakeFiles/OpenCV_Functionality.dir/OpenCV_Functionality.cpp.s
+.PHONY : OpenCV_Functionality.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... sampleCode"
-	@echo "... sampleCode.o"
-	@echo "... sampleCode.i"
-	@echo "... sampleCode.s"
+	@echo "... OpenCV_Functionality"
+	@echo "... OpenCV_Functionality.o"
+	@echo "... OpenCV_Functionality.i"
+	@echo "... OpenCV_Functionality.s"
 .PHONY : help
 
 

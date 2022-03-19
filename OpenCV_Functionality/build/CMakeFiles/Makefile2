@@ -44,16 +44,16 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance
+CMAKE_SOURCE_DIR = /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/build
+CMAKE_BINARY_DIR = /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/sampleCode.dir/all
+all: CMakeFiles/OpenCV_Functionality.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/sampleCode.dir/clean
+clean: CMakeFiles/OpenCV_Functionality.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sampleCode.dir
+# Target rules for target CMakeFiles/OpenCV_Functionality.dir
 
 # All Build rule for target.
-CMakeFiles/sampleCode.dir/all:
-	$(MAKE) -f CMakeFiles/sampleCode.dir/build.make CMakeFiles/sampleCode.dir/depend
-	$(MAKE) -f CMakeFiles/sampleCode.dir/build.make CMakeFiles/sampleCode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/build/CMakeFiles --progress-num=1,2 "Built target sampleCode"
-.PHONY : CMakeFiles/sampleCode.dir/all
+CMakeFiles/OpenCV_Functionality.dir/all:
+	$(MAKE) -f CMakeFiles/OpenCV_Functionality.dir/build.make CMakeFiles/OpenCV_Functionality.dir/depend
+	$(MAKE) -f CMakeFiles/OpenCV_Functionality.dir/build.make CMakeFiles/OpenCV_Functionality.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/build/CMakeFiles --progress-num=1,2 "Built target OpenCV_Functionality"
+.PHONY : CMakeFiles/OpenCV_Functionality.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/sampleCode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sampleCode.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/build/CMakeFiles 0
-.PHONY : CMakeFiles/sampleCode.dir/rule
+CMakeFiles/OpenCV_Functionality.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/OpenCV_Functionality.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/build/CMakeFiles 0
+.PHONY : CMakeFiles/OpenCV_Functionality.dir/rule
 
 # Convenience name for target.
-sampleCode: CMakeFiles/sampleCode.dir/rule
+OpenCV_Functionality: CMakeFiles/OpenCV_Functionality.dir/rule
 
-.PHONY : sampleCode
+.PHONY : OpenCV_Functionality
 
 # clean rule for target.
-CMakeFiles/sampleCode.dir/clean:
-	$(MAKE) -f CMakeFiles/sampleCode.dir/build.make CMakeFiles/sampleCode.dir/clean
-.PHONY : CMakeFiles/sampleCode.dir/clean
+CMakeFiles/OpenCV_Functionality.dir/clean:
+	$(MAKE) -f CMakeFiles/OpenCV_Functionality.dir/build.make CMakeFiles/OpenCV_Functionality.dir/clean
+.PHONY : CMakeFiles/OpenCV_Functionality.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 
 # SPECIFY YOUR PROJECT NAME
-PROJECT(sampleCode)
+PROJECT(OpenCV_Functionality)
 
 
 # Enable C++11
@@ -17,7 +17,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 ###SET PATH TO OPENCV CMAKE CONFIG FILES
 
 SET(OpenCV_DIR /Home/home/installation/OpenCV/lib/cmake/opencv4)
-PROJECT(sampleCode)
+PROJECT(OpenCV_Functionality)
 
 ################### OpenCV_DIR Examples  #####################
 #
@@ -47,5 +47,5 @@ ENDMACRO()
 
 # COMPILE CPP FILES USING THIS LINE
 ######## EDIT THE FILE NAMES ########
-add_example(sampleCode)
+add_example(OpenCV_Functionality)
 #add_example(sampleCode2) and so on
