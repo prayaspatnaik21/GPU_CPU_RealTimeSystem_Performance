@@ -33,10 +33,11 @@
     1. cd /usr/local/lib/
     2. git clone https://github.com/nigels-com/glew.git
 
-Command to run the OpenGL Proram - g++ OpenGLFuntionality.cpp -o hw_opengl -lGL -lGLEW -lGLU -lglut -lglfw -ldl 
+## Command to run the OpenGL Program
+
+    g++ OpenGLFuntionality.cpp -o hw_opengl -lGL -lGLEW -lGLU -lglut -lglfw -ldl
 
 ## References
 
     1.[Khronos](https://www.khronos.org/registry/OpenGL/index_gl.php)
     2.[OpenGL Docs](https://docs.gl/#)
-    
