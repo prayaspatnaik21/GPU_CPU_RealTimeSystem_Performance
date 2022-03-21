@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 //VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
+using namespace cv;
 
 struct ShaderProgramSource
 {
