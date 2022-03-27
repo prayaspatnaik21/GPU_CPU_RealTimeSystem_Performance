@@ -42,15 +42,16 @@ SET(glfw_src "${PROJECT_DEPS}/glfw/src/")
 # INCLUDE OPENCV DIRECTORIES
 include_directories( ${OpenCV_INCLUDE_DIRS} ${glew_inc} ${glew_src} ${glfw_inc} ${glfw_src})
 
+set(SOURCES OpenGL_Functionality.cpp VertexBuffer.cpp VertexBuffer.h IndexBuffer.cpp IndexBuffer.h)
+
 # MACRO TO COMPILE CPP FILES
-# Do Not Edit
-MACRO(add_example name)
-  ADD_EXECUTABLE(${name} ${name}.cpp)
-  TARGET_LINK_LIBRARIES(${name} ${LIBS} )
-ENDMACRO()
+# Do Not Edits
+
+ADD_EXECUTABLE(OpenGL_Functionality ${SOURCES})
+TARGET_LINK_LIBRARIES(OpenGL_Functionality ${LIBS} )
 
 
 # COMPILE CPP FILES USING THIS LINE
 ######## EDIT THE FILE NAMES ########
-add_example(OpenGL_Functionality)
+#add_example(OpenGL_Functionality)
 #add_example(sampleCode2) and so on

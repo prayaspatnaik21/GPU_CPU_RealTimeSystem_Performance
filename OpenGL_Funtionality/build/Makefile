@@ -136,6 +136,33 @@ GLAD/fast:
 	$(MAKE) -f CMakeFiles/GLAD.dir/build.make CMakeFiles/GLAD.dir/build
 .PHONY : GLAD/fast
 
+IndexBuffer.o: IndexBuffer.cpp.o
+
+.PHONY : IndexBuffer.o
+
+# target to build an object file
+IndexBuffer.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/IndexBuffer.cpp.o
+.PHONY : IndexBuffer.cpp.o
+
+IndexBuffer.i: IndexBuffer.cpp.i
+
+.PHONY : IndexBuffer.i
+
+# target to preprocess a source file
+IndexBuffer.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/IndexBuffer.cpp.i
+.PHONY : IndexBuffer.cpp.i
+
+IndexBuffer.s: IndexBuffer.cpp.s
+
+.PHONY : IndexBuffer.s
+
+# target to generate assembly for a file
+IndexBuffer.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/IndexBuffer.cpp.s
+.PHONY : IndexBuffer.cpp.s
+
 OpenGL_Functionality.o: OpenGL_Functionality.cpp.o
 
 .PHONY : OpenGL_Functionality.o
@@ -162,6 +189,33 @@ OpenGL_Functionality.s: OpenGL_Functionality.cpp.s
 OpenGL_Functionality.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/OpenGL_Functionality.cpp.s
 .PHONY : OpenGL_Functionality.cpp.s
+
+VertexBuffer.o: VertexBuffer.cpp.o
+
+.PHONY : VertexBuffer.o
+
+# target to build an object file
+VertexBuffer.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/VertexBuffer.cpp.o
+.PHONY : VertexBuffer.cpp.o
+
+VertexBuffer.i: VertexBuffer.cpp.i
+
+.PHONY : VertexBuffer.i
+
+# target to preprocess a source file
+VertexBuffer.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/VertexBuffer.cpp.i
+.PHONY : VertexBuffer.cpp.i
+
+VertexBuffer.s: VertexBuffer.cpp.s
+
+.PHONY : VertexBuffer.s
+
+# target to generate assembly for a file
+VertexBuffer.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/VertexBuffer.cpp.s
+.PHONY : VertexBuffer.cpp.s
 
 resources/glad.o: resources/glad.c.o
 
@@ -200,9 +254,15 @@ help:
 	@echo "... OpenGL_Functionality"
 	@echo "... edit_cache"
 	@echo "... GLAD"
+	@echo "... IndexBuffer.o"
+	@echo "... IndexBuffer.i"
+	@echo "... IndexBuffer.s"
 	@echo "... OpenGL_Functionality.o"
 	@echo "... OpenGL_Functionality.i"
 	@echo "... OpenGL_Functionality.s"
+	@echo "... VertexBuffer.o"
+	@echo "... VertexBuffer.i"
+	@echo "... VertexBuffer.s"
 	@echo "... resources/glad.o"
 	@echo "... resources/glad.i"
 	@echo "... resources/glad.s"

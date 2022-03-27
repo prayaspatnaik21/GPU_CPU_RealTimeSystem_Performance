@@ -1,11 +1,18 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h> 
+#include <opencv2/opencv.hpp>
 #include <malloc.h>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
+#include "Renderer.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
+
 //VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
+
+using namespace cv;
 
 struct ShaderProgramSource
 {
@@ -143,26 +150,30 @@ int main(void)
 
     /*glBufferData is a function specifically targeted to copy user-defined data into the currently
     bound buffer. */
-    unsigned int buffer;
-    //Generate the buffer
-    glGenBuffers(1,&buffer);
-    //Bind the buffer
-    glBindBuffer(GL_ARRAY_BUFFER,buffer);
-    //Static or Dynamic it's upto the type of the Application
-    glBufferData(GL_ARRAY_BUFFER,6*2*sizeof(float),positions,GL_STATIC_DRAW);
+    // unsigned int buffer;
+    // //Generate the buffer
+    // glGenBuffers(1,&buffer);
+    // //Bind the buffer
+    // glBindBuffer(GL_ARRAY_BUFFER,buffer);
+    // //Static or Dynamic it's upto the type of the Application
+    // glBufferData(GL_ARRAY_BUFFER,6*2*sizeof(float),positions,GL_STATIC_DRAW);
+
+    ///Testing Class Implementation
+    VertexBuffer vb(positions,4*2*sizeof(float));
+    IndexBuffer  ib(indices,6);
 
     glEnableVertexAttribArray(0);
     //Location should be the index of the vertex attrib pointer
     //Inedx 0 of this vertex array is bound to currently bound gl array buffer
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
 
-    unsigned int ibo;
-    //Generate the buffer
-    glGenBuffers(1,&ibo);
-    //Bind the buffer
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
-    //Static or Dynamic it's upto the type of the Application
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER,4*2*sizeof(unsigned int),indices,GL_STATIC_DRAW);
+    // unsigned int ibo;
+    // //Generate the buffer
+    // glGenBuffers(1,&ibo);
+    // //Bind the buffer
+    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
+    // //Static or Dynamic it's upto the type of the Application
+    // glBufferData(GL_ELEMENT_ARRAY_BUFFER,4*2*sizeof(unsigned int),indices,GL_STATIC_DRAW);
 
 
     ShaderProgramSource source = ReadShader("../resources/shaders/shaders.shader");
@@ -200,7 +211,8 @@ int main(void)
         glUseProgram(shader);
         glUniform4f(location,r,g,b,0.0f);
         glBindVertexArray(vao);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
+        ib.Bind();
+        //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
         
         //Use when we don't use Index Buffer and this will use that buffer which is binded
         //glDrawArrays(GL_TRIANGLES,0,6);
