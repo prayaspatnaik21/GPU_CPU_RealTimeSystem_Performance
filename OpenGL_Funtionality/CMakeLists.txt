@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 
 # SPECIFY YOUR PROJECT NAME
-PROJECT(OpenCV_Functionality)
+PROJECT(OpenGL_Functionality)
 
 
 # Enable C++11
@@ -22,25 +22,35 @@ SET(OpenCV_DIR /Home/home/installation/OpenCV/lib/cmake/opencv4)
 #
 ##############################################################
 
-
+set(OpenGL_GL_PREFERENCE "GLVND")
 
 
 # MAKE SURE OPENCV IS INSTALLED CORRECTLY
 find_package( OpenCV REQUIRED )
+find_package( OpenGL REQUIRED )
+find_package( GLEW REQUIRED )
 
+add_library(GLAD  "resources/glad.c")
+set(LIBS    glfw    ${OPENGL_LIBRARY}   GLAD    ${OpenCV_LIBS} ${GLEW_LIBRARIES})
+
+SET(PROJECT_DEPS "/usr/local/include")
+SET(glew_inc "${PROJECT_DEPS}/glew/include/GL/")
+SET(glew_src "${PROJECT_DEPS}/glew/src/")
+SET(glfw_inc "${PROJECT_DEPS}/glfw/include/GLFW/")
+SET(glfw_src "${PROJECT_DEPS}/glfw/src/")
 
 # INCLUDE OPENCV DIRECTORIES
-include_directories( ${OpenCV_INCLUDE_DIRS})
+include_directories( ${OpenCV_INCLUDE_DIRS} ${glew_inc} ${glew_src} ${glfw_inc} ${glfw_src})
 
 # MACRO TO COMPILE CPP FILES
 # Do Not Edit
 MACRO(add_example name)
   ADD_EXECUTABLE(${name} ${name}.cpp)
-  TARGET_LINK_LIBRARIES(${name} ${OpenCV_LIBS} )
+  TARGET_LINK_LIBRARIES(${name} ${LIBS} )
 ENDMACRO()
 
 
 # COMPILE CPP FILES USING THIS LINE
 ######## EDIT THE FILE NAMES ########
-add_example(OpenCV_Functionality)
+add_example(OpenGL_Functionality)
 #add_example(sampleCode2) and so on

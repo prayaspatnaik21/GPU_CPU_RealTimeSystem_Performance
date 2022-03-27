@@ -6,7 +6,6 @@
 #include <string>
 #include <sstream>
 //VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
-using namespace cv;
 
 struct ShaderProgramSource
 {
@@ -166,7 +165,7 @@ int main(void)
     glBufferData(GL_ELEMENT_ARRAY_BUFFER,4*2*sizeof(unsigned int),indices,GL_STATIC_DRAW);
 
 
-    ShaderProgramSource source = ReadShader("resources/shaders/shaders.shader");
+    ShaderProgramSource source = ReadShader("../resources/shaders/shaders.shader");
     
     
     unsigned int shader = CreateShader(source.VertexSource,source.FragmentSource);
