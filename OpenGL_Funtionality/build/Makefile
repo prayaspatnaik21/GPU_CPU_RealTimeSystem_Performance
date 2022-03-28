@@ -217,6 +217,33 @@ src/OpenGL_Functionality.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.s
 .PHONY : src/OpenGL_Functionality.cpp.s
 
+src/Shader.o: src/Shader.cpp.o
+
+.PHONY : src/Shader.o
+
+# target to build an object file
+src/Shader.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o
+.PHONY : src/Shader.cpp.o
+
+src/Shader.i: src/Shader.cpp.i
+
+.PHONY : src/Shader.i
+
+# target to preprocess a source file
+src/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.i
+.PHONY : src/Shader.cpp.i
+
+src/Shader.s: src/Shader.cpp.s
+
+.PHONY : src/Shader.s
+
+# target to generate assembly for a file
+src/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.s
+.PHONY : src/Shader.cpp.s
+
 src/VertexBuffer.o: src/VertexBuffer.cpp.o
 
 .PHONY : src/VertexBuffer.o
@@ -263,6 +290,9 @@ help:
 	@echo "... src/OpenGL_Functionality.o"
 	@echo "... src/OpenGL_Functionality.i"
 	@echo "... src/OpenGL_Functionality.s"
+	@echo "... src/Shader.o"
+	@echo "... src/Shader.i"
+	@echo "... src/Shader.s"
 	@echo "... src/VertexBuffer.o"
 	@echo "... src/VertexBuffer.i"
 	@echo "... src/VertexBuffer.s"

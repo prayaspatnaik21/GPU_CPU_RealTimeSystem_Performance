@@ -9,92 +9,11 @@
 #include "Renderer.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
+#include "Shader.h"
 
 //VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
 
 using namespace cv;
-
-struct ShaderProgramSource
-{
-    std::string VertexSource;
-    std::string FragmentSource;
-};
-
-struct ShaderProgramSource ReadShader(const std::string& filePath)
-{
-    std::ifstream stream(filePath);
-    enum class ShaderType
-    {
-        NONE = -1,VERTEX = 0,FRAGMENT = 1
-    };
-
-    std::string line;
-    std::stringstream ss[2];
-    ShaderType type = ShaderType::NONE;
-
-    while(getline(stream,line))
-    {
-        if(line.find("#shader") != std::string::npos)
-        {
-            if(line.find("vertex") != std::string::npos)
-            {
-                type = ShaderType::VERTEX;
-            }
-            else if(line.find("fragment") != std::string::npos)
-            {
-                type = ShaderType::FRAGMENT;
-            }
-        }
-        else{
-            ss[(int)type]  << line << "\n";
-
-        }
-    }
-
-    return { ss[0].str(),ss[1].str()};
-}
-/*Dynamically compile it at run-time from its source code*/
-static unsigned int CompileShader(unsigned int type,const std::string& source)
-{
-    unsigned int id = glCreateShader(type);
-    const char* src = source.c_str();
-    glShaderSource(id,1,&src,nullptr);
-    glCompileShader(id);
-
-    int result;
-    glGetShaderiv(id, GL_COMPILE_STATUS,&result);
-    if(result == GL_FALSE){
-        int length = 0;
-        glGetShaderiv(id, GL_INFO_LOG_LENGTH,&length);
-        char* message = (char*)malloc(length * sizeof(char)); // stack Dynamically
-        glGetShaderInfoLog(id, length, &length, message);
-        std::cout << "Failed to compile" << " " <<
-                    (type == GL_VERTEX_SHADER ? "vertex":"fragment") << "shader!" << std::endl;
-        std::cout << message << std::endl;
-        glDeleteShader(id);
-        return 0;
-    }
-
-    return id;
-}
-
-static unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
-{
-    unsigned int program = glCreateProgram();
-    unsigned int vertexShaderID = CompileShader(GL_VERTEX_SHADER,vertexShader);
-    unsigned int fragmentShaderID = CompileShader(GL_FRAGMENT_SHADER,fragmentShader);
-
-
-    glAttachShader(program, vertexShaderID);
-    glAttachShader(program, fragmentShaderID);
-    glLinkProgram(program);
-    glValidateProgram(program);
-
-    glDeleteShader(vertexShaderID);
-    glDeleteShader(fragmentShaderID);
-
-    return program;
-}
 
 int main(void)
 {
@@ -148,39 +67,17 @@ int main(void)
     glGenVertexArrays(1,&vao);
     glBindVertexArray(vao);
 
-    /*glBufferData is a function specifically targeted to copy user-defined data into the currently
-    bound buffer. */
-    // unsigned int buffer;
-    // //Generate the buffer
-    // glGenBuffers(1,&buffer);
-    // //Bind the buffer
-    // glBindBuffer(GL_ARRAY_BUFFER,buffer);
-    // //Static or Dynamic it's upto the type of the Application
-    // glBufferData(GL_ARRAY_BUFFER,6*2*sizeof(float),positions,GL_STATIC_DRAW);
 
     ///Testing Class Implementation
     VertexBuffer vb(positions,4*2*sizeof(float));
     IndexBuffer  ib(indices,6);
+    Shader shd("../resources/shaders/shaders.shader");
+    shd.Bind();
 
     glEnableVertexAttribArray(0);
     //Location should be the index of the vertex attrib pointer
     //Inedx 0 of this vertex array is bound to currently bound gl array buffer
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
-
-    // unsigned int ibo;
-    // //Generate the buffer
-    // glGenBuffers(1,&ibo);
-    // //Bind the buffer
-    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
-    // //Static or Dynamic it's upto the type of the Application
-    // glBufferData(GL_ELEMENT_ARRAY_BUFFER,4*2*sizeof(unsigned int),indices,GL_STATIC_DRAW);
-
-
-    ShaderProgramSource source = ReadShader("../resources/shaders/shaders.shader");
-    
-    
-    unsigned int shader = CreateShader(source.VertexSource,source.FragmentSource);
-    glUseProgram(shader);
 
     //UnBinding VertexArrayObject, Program Object,BufferData
     glBindVertexArray(0);
@@ -188,12 +85,10 @@ int main(void)
     glBindBuffer(GL_ARRAY_BUFFER,0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
 
-
-    int location = glGetUniformLocation(shader,"u_Color");
+    int location = shd.GetUniformLocation("u_Color");
 
     glUseProgram(0);
     glBindBuffer(GL_ARRAY_BUFFER,0);
-
     float r = 0.0f; 
     float g = 0.0f; 
     float b = 0.0f; 
@@ -208,11 +103,12 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glUseProgram(shader);
+        shd.Bind();
+        //std::cout << r << " " << g << " " << b << std::endl;
+        //shd.SetUniformLocation(location,r,g,b);
         glUniform4f(location,r,g,b,0.0f);
         glBindVertexArray(vao);
         ib.Bind();
-        //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
         
         //Use when we don't use Index Buffer and this will use that buffer which is binded
         //glDrawArrays(GL_TRIANGLES,0,6);
@@ -234,7 +130,7 @@ int main(void)
         glfwPollEvents(); 
     }
 
-    glDeleteProgram(shader);
+    //glDeleteProgram(shader);
 
     /* This will clean up all the resources and properly exit the application. */
     glfwTerminate();
