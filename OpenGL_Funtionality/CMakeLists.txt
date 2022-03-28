@@ -42,7 +42,7 @@ SET(glfw_src "${PROJECT_DEPS}/glfw/src/")
 # INCLUDE OPENCV DIRECTORIES
 include_directories( ${OpenCV_INCLUDE_DIRS} ${glew_inc} ${glew_src} ${glfw_inc} ${glfw_src})
 
-set(SOURCES OpenGL_Functionality.cpp VertexBuffer.cpp VertexBuffer.h IndexBuffer.cpp IndexBuffer.h)
+set(SOURCES src/OpenGL_Functionality.cpp src/VertexBuffer.cpp src/VertexBuffer.h src/IndexBuffer.cpp src/IndexBuffer.h)
 
 # MACRO TO COMPILE CPP FILES
 # Do Not Edits

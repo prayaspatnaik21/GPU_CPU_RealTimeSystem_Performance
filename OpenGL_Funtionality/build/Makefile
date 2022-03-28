@@ -136,87 +136,6 @@ GLAD/fast:
 	$(MAKE) -f CMakeFiles/GLAD.dir/build.make CMakeFiles/GLAD.dir/build
 .PHONY : GLAD/fast
 
-IndexBuffer.o: IndexBuffer.cpp.o
-
-.PHONY : IndexBuffer.o
-
-# target to build an object file
-IndexBuffer.cpp.o:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/IndexBuffer.cpp.o
-.PHONY : IndexBuffer.cpp.o
-
-IndexBuffer.i: IndexBuffer.cpp.i
-
-.PHONY : IndexBuffer.i
-
-# target to preprocess a source file
-IndexBuffer.cpp.i:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/IndexBuffer.cpp.i
-.PHONY : IndexBuffer.cpp.i
-
-IndexBuffer.s: IndexBuffer.cpp.s
-
-.PHONY : IndexBuffer.s
-
-# target to generate assembly for a file
-IndexBuffer.cpp.s:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/IndexBuffer.cpp.s
-.PHONY : IndexBuffer.cpp.s
-
-OpenGL_Functionality.o: OpenGL_Functionality.cpp.o
-
-.PHONY : OpenGL_Functionality.o
-
-# target to build an object file
-OpenGL_Functionality.cpp.o:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/OpenGL_Functionality.cpp.o
-.PHONY : OpenGL_Functionality.cpp.o
-
-OpenGL_Functionality.i: OpenGL_Functionality.cpp.i
-
-.PHONY : OpenGL_Functionality.i
-
-# target to preprocess a source file
-OpenGL_Functionality.cpp.i:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/OpenGL_Functionality.cpp.i
-.PHONY : OpenGL_Functionality.cpp.i
-
-OpenGL_Functionality.s: OpenGL_Functionality.cpp.s
-
-.PHONY : OpenGL_Functionality.s
-
-# target to generate assembly for a file
-OpenGL_Functionality.cpp.s:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/OpenGL_Functionality.cpp.s
-.PHONY : OpenGL_Functionality.cpp.s
-
-VertexBuffer.o: VertexBuffer.cpp.o
-
-.PHONY : VertexBuffer.o
-
-# target to build an object file
-VertexBuffer.cpp.o:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/VertexBuffer.cpp.o
-.PHONY : VertexBuffer.cpp.o
-
-VertexBuffer.i: VertexBuffer.cpp.i
-
-.PHONY : VertexBuffer.i
-
-# target to preprocess a source file
-VertexBuffer.cpp.i:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/VertexBuffer.cpp.i
-.PHONY : VertexBuffer.cpp.i
-
-VertexBuffer.s: VertexBuffer.cpp.s
-
-.PHONY : VertexBuffer.s
-
-# target to generate assembly for a file
-VertexBuffer.cpp.s:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/VertexBuffer.cpp.s
-.PHONY : VertexBuffer.cpp.s
-
 resources/glad.o: resources/glad.c.o
 
 .PHONY : resources/glad.o
@@ -244,6 +163,87 @@ resources/glad.c.s:
 	$(MAKE) -f CMakeFiles/GLAD.dir/build.make CMakeFiles/GLAD.dir/resources/glad.c.s
 .PHONY : resources/glad.c.s
 
+src/IndexBuffer.o: src/IndexBuffer.cpp.o
+
+.PHONY : src/IndexBuffer.o
+
+# target to build an object file
+src/IndexBuffer.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o
+.PHONY : src/IndexBuffer.cpp.o
+
+src/IndexBuffer.i: src/IndexBuffer.cpp.i
+
+.PHONY : src/IndexBuffer.i
+
+# target to preprocess a source file
+src/IndexBuffer.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.i
+.PHONY : src/IndexBuffer.cpp.i
+
+src/IndexBuffer.s: src/IndexBuffer.cpp.s
+
+.PHONY : src/IndexBuffer.s
+
+# target to generate assembly for a file
+src/IndexBuffer.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.s
+.PHONY : src/IndexBuffer.cpp.s
+
+src/OpenGL_Functionality.o: src/OpenGL_Functionality.cpp.o
+
+.PHONY : src/OpenGL_Functionality.o
+
+# target to build an object file
+src/OpenGL_Functionality.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.o
+.PHONY : src/OpenGL_Functionality.cpp.o
+
+src/OpenGL_Functionality.i: src/OpenGL_Functionality.cpp.i
+
+.PHONY : src/OpenGL_Functionality.i
+
+# target to preprocess a source file
+src/OpenGL_Functionality.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.i
+.PHONY : src/OpenGL_Functionality.cpp.i
+
+src/OpenGL_Functionality.s: src/OpenGL_Functionality.cpp.s
+
+.PHONY : src/OpenGL_Functionality.s
+
+# target to generate assembly for a file
+src/OpenGL_Functionality.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.s
+.PHONY : src/OpenGL_Functionality.cpp.s
+
+src/VertexBuffer.o: src/VertexBuffer.cpp.o
+
+.PHONY : src/VertexBuffer.o
+
+# target to build an object file
+src/VertexBuffer.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o
+.PHONY : src/VertexBuffer.cpp.o
+
+src/VertexBuffer.i: src/VertexBuffer.cpp.i
+
+.PHONY : src/VertexBuffer.i
+
+# target to preprocess a source file
+src/VertexBuffer.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.i
+.PHONY : src/VertexBuffer.cpp.i
+
+src/VertexBuffer.s: src/VertexBuffer.cpp.s
+
+.PHONY : src/VertexBuffer.s
+
+# target to generate assembly for a file
+src/VertexBuffer.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.s
+.PHONY : src/VertexBuffer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -254,18 +254,18 @@ help:
 	@echo "... OpenGL_Functionality"
 	@echo "... edit_cache"
 	@echo "... GLAD"
-	@echo "... IndexBuffer.o"
-	@echo "... IndexBuffer.i"
-	@echo "... IndexBuffer.s"
-	@echo "... OpenGL_Functionality.o"
-	@echo "... OpenGL_Functionality.i"
-	@echo "... OpenGL_Functionality.s"
-	@echo "... VertexBuffer.o"
-	@echo "... VertexBuffer.i"
-	@echo "... VertexBuffer.s"
 	@echo "... resources/glad.o"
 	@echo "... resources/glad.i"
 	@echo "... resources/glad.s"
+	@echo "... src/IndexBuffer.o"
+	@echo "... src/IndexBuffer.i"
+	@echo "... src/IndexBuffer.s"
+	@echo "... src/OpenGL_Functionality.o"
+	@echo "... src/OpenGL_Functionality.i"
+	@echo "... src/OpenGL_Functionality.s"
+	@echo "... src/VertexBuffer.o"
+	@echo "... src/VertexBuffer.i"
+	@echo "... src/VertexBuffer.s"
 .PHONY : help
 
 

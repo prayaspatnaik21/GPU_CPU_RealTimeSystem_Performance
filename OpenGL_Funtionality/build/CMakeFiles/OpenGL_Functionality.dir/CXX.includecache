@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/IndexBuffer.cpp
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.cpp
 IndexBuffer.h
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/IndexBuffer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.h
 Renderer.h
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/Renderer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
 
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/IndexBuffer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.h
 
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/OpenGL_Functionality.cpp
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/OpenGL_Functionality.cpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -32,23 +32,23 @@ string
 sstream
 -
 Renderer.h
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/Renderer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
 VertexBuffer.h
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/VertexBuffer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
 IndexBuffer.h
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/IndexBuffer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.h
 
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/Renderer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
 GL/glew.h
 -
 
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/VertexBuffer.cpp
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.cpp
 VertexBuffer.h
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/VertexBuffer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
 Renderer.h
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/Renderer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
 
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/VertexBuffer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
