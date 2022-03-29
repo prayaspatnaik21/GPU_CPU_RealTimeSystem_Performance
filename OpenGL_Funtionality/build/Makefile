@@ -244,6 +244,33 @@ src/Shader.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.s
 .PHONY : src/Shader.cpp.s
 
+src/VertexArray.o: src/VertexArray.cpp.o
+
+.PHONY : src/VertexArray.o
+
+# target to build an object file
+src/VertexArray.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o
+.PHONY : src/VertexArray.cpp.o
+
+src/VertexArray.i: src/VertexArray.cpp.i
+
+.PHONY : src/VertexArray.i
+
+# target to preprocess a source file
+src/VertexArray.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.i
+.PHONY : src/VertexArray.cpp.i
+
+src/VertexArray.s: src/VertexArray.cpp.s
+
+.PHONY : src/VertexArray.s
+
+# target to generate assembly for a file
+src/VertexArray.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.s
+.PHONY : src/VertexArray.cpp.s
+
 src/VertexBuffer.o: src/VertexBuffer.cpp.o
 
 .PHONY : src/VertexBuffer.o
@@ -293,6 +320,9 @@ help:
 	@echo "... src/Shader.o"
 	@echo "... src/Shader.i"
 	@echo "... src/Shader.s"
+	@echo "... src/VertexArray.o"
+	@echo "... src/VertexArray.i"
+	@echo "... src/VertexArray.s"
 	@echo "... src/VertexBuffer.o"
 	@echo "... src/VertexBuffer.i"
 	@echo "... src/VertexBuffer.s"

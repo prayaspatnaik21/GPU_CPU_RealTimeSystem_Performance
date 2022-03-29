@@ -4,12 +4,12 @@
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.cpp
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.h
- /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
 CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.o
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.h
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/OpenGL_Functionality.cpp
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Shader.h
+ /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.h
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
  /usr/local/include/opencv4/opencv2/calib3d.hpp
  /usr/local/include/opencv4/opencv2/core.hpp
@@ -116,7 +116,10 @@ CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Shader.cpp
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Shader.h
+CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o
+ /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.cpp
+ /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.h
+ /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
 CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o
- /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.cpp
  /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
