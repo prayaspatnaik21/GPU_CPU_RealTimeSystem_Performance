@@ -1,4 +1,5 @@
 #pragma once
+#include <GL/glew.h>
 #include "Renderer.h"
 
 struct ShaderProgramSource
@@ -12,6 +13,7 @@ class Shader
     private:
         std::string ShaderPath;
         unsigned int ShaderID;
+        int Location{-1};
     public:
         Shader(std::string shaderPath);
         ~Shader();
@@ -21,5 +23,5 @@ class Shader
         void Bind();
         void UnBind();
         int GetUniformLocation(std::string uniformName);
-        void SetUniformLocation(int location,int r,int g,int b);
+        void SetUniformLocation(float r,float g,float b);
 };

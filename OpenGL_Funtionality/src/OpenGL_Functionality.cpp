@@ -7,7 +7,7 @@
 #include <string>
 #include <sstream>
 #include "Renderer.h"
-#include "VertexBuffer.h"
+#include "VertexArray.h"
 #include "IndexBuffer.h"
 #include "Shader.h"
 
@@ -47,48 +47,25 @@ int main(void)
 
     std::cout << glGetString(GL_VERSION) << std::endl;
 
-    /*we want to render a single triangle we want to specify a total of three vertices with
-    each vertex having a 3D position. */
-    float positions[] = {
-
-        -0.5f,-0.5f,
-        0.5f,-0.5f,
-        0.5f,0.5f,
-        -0.5f,0.5f, 
-    }; 
-
-    unsigned int indices[] = { 
-        0,1,2,
-        2,3,0
-    };
-
-    //VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
-    unsigned int vao;
-    glGenVertexArrays(1,&vao);
-    glBindVertexArray(vao);
-
-
     ///Testing Class Implementation
-    VertexBuffer vb(positions,4*2*sizeof(float));
-    IndexBuffer  ib(indices,6);
-    Shader shd("../resources/shaders/shaders.shader");
-    shd.Bind();
+    //Renderer render(6,path);
+    //VertexArray vao;
+    //VertexBuffer vb(4*2*sizeof(float));
+    //IndexBuffer  ib(6);
+    string path{"../resources/shaders/shaders.shader"};
+    Renderer render(6,path);
+    //Shader shd(path);
+    //shd.Bind();
+    render.UnBind();
 
-    glEnableVertexAttribArray(0);
-    //Location should be the index of the vertex attrib pointer
-    //Inedx 0 of this vertex array is bound to currently bound gl array buffer
-    glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
+    //vao.AddBuffer();
 
     //UnBinding VertexArrayObject, Program Object,BufferData
-    glBindVertexArray(0);
-    glUseProgram(0);
-    glBindBuffer(GL_ARRAY_BUFFER,0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
+    // vao.UnBind();
+    // shd.UnBind();
 
-    int location = shd.GetUniformLocation("u_Color");
-
-    glUseProgram(0);
-    glBindBuffer(GL_ARRAY_BUFFER,0);
+    //int location = shd.GetUniformLocation("u_Color");
+    
     float r = 0.0f; 
     float g = 0.0f; 
     float b = 0.0f; 
@@ -102,17 +79,15 @@ int main(void)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-
-        shd.Bind();
-        //std::cout << r << " " << g << " " << b << std::endl;
-        //shd.SetUniformLocation(location,r,g,b);
-        glUniform4f(location,r,g,b,0.0f);
-        glBindVertexArray(vao);
-        ib.Bind();
+        render.Bind();
+        //shd.Bind();
+        shd.SetUniformLocation(location,r,g,b);
+        //vao.Bind();
+        //ib.Bind();
         
         //Use when we don't use Index Buffer and this will use that buffer which is binded
-        //glDrawArrays(GL_TRIANGLES,0,6);
-        glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,nullptr);
+        //glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,nullptr);
+        render.Draw();
 
         if(r > 1.0f)
             increament = -0.05f;

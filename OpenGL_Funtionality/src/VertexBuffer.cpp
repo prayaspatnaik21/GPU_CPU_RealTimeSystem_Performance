@@ -1,13 +1,12 @@
 #include "VertexBuffer.h"
-#include "Renderer.h"
 
-VertexBuffer::VertexBuffer(const void* data,unsigned int size)
+VertexBuffer::VertexBuffer(unsigned int size)
 {
     glGenBuffers(1,&m_RendererID);
     //Bind the buffer
     glBindBuffer(GL_ARRAY_BUFFER,m_RendererID);
     //Static or Dynamic it's upto the type of the Application
-    glBufferData(GL_ARRAY_BUFFER,size,data,GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER,size,positions,GL_STATIC_DRAW);
 }
 
 VertexBuffer::~VertexBuffer()
