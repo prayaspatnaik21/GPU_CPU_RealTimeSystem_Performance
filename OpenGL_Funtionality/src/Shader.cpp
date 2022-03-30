@@ -5,7 +5,6 @@ Shader::Shader(std::string shaderPath)
 {
     ShaderProgramSource source = ReadShader(ShaderPath);
     ShaderID = CreateShader(source.VertexSource,source.FragmentSource);
-    Location = GetUniformLocation("u_Color");
 }
 
 Shader::~Shader()
@@ -101,7 +100,7 @@ int Shader :: GetUniformLocation(std::string uniformName){
     return glGetUniformLocation(ShaderID, uniformName.c_str());
 }
 
-void Shader :: SetUniformLocation(float r,float g,float b)
+void Shader :: SetUniformLocation(int location,int r,int g,int b)
 {
-    glUniform4f(Location,r,g,b,0.0f);
+    glUniform4f(location,r,g,b,0.0f);
 }
