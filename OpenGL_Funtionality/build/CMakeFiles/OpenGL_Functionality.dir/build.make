@@ -70,9 +70,22 @@ CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/OpenGL_Functionality.cpp -o CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.s
 
+CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: CMakeFiles/OpenGL_Functionality.dir/flags.make
+CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: ../src/Renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o -c /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.cpp
+
+CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.cpp > CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.i
+
+CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.cpp -o CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.s
+
 CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o: CMakeFiles/OpenGL_Functionality.dir/flags.make
 CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o: ../src/VertexBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o -c /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.cpp
 
 CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.s: cmake_force
 
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: CMakeFiles/OpenGL_Functionality.dir/flags.make
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: ../src/IndexBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o -c /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.cpp
 
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.s: cmake_force
 
 CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o: CMakeFiles/OpenGL_Functionality.dir/flags.make
 CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o: ../src/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o -c /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Shader.cpp
 
 CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.i: cmake_force
@@ -109,35 +122,37 @@ CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Shader.cpp -o CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.s
 
-CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o: CMakeFiles/OpenGL_Functionality.dir/flags.make
-CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o: ../src/VertexArray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o -c /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.cpp
+CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.o: CMakeFiles/OpenGL_Functionality.dir/flags.make
+CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.o: ../src/Texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.o -c /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Texture.cpp
 
-CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.cpp > CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.i
+CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Texture.cpp > CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.i
 
-CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.cpp -o CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.s
+CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Texture.cpp -o CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.s
 
 # Object files for target OpenGL_Functionality
 OpenGL_Functionality_OBJECTS = \
 "CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.o" \
+"CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o" \
 "CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o" \
 "CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o" \
 "CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o" \
-"CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o"
+"CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.o"
 
 # External object files for target OpenGL_Functionality
 OpenGL_Functionality_EXTERNAL_OBJECTS =
 
 OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.o
+OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o
 OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o
 OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o
 OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o
-OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o
+OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.o
 OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/build.make
 OpenGL_Functionality: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 OpenGL_Functionality: /usr/lib/x86_64-linux-gnu/libGLX.so
@@ -198,7 +213,7 @@ OpenGL_Functionality: /usr/local/lib/libopencv_photo.so.4.5.0
 OpenGL_Functionality: /usr/local/lib/libopencv_imgproc.so.4.5.0
 OpenGL_Functionality: /usr/local/lib/libopencv_core.so.4.5.0
 OpenGL_Functionality: CMakeFiles/OpenGL_Functionality.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable OpenGL_Functionality"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable OpenGL_Functionality"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OpenGL_Functionality.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

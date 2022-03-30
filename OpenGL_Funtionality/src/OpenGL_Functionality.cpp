@@ -7,11 +7,10 @@
 #include <string>
 #include <sstream>
 #include "Renderer.h"
+#include "Texture.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "Shader.h"
-
-//VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
 
 using namespace cv;
 
@@ -61,6 +60,11 @@ int main(void)
         0,1,2,
         2,3,0
     };
+
+    Mat image = imread("../resources/Images/Sam_1.jpg",1);
+	Size outDim = image.size();
+
+    std::cout << outDim << std::endl;
 
     //VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
     unsigned int vao;

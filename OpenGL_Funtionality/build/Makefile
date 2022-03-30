@@ -217,6 +217,33 @@ src/OpenGL_Functionality.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/OpenGL_Functionality.cpp.s
 .PHONY : src/OpenGL_Functionality.cpp.s
 
+src/Renderer.o: src/Renderer.cpp.o
+
+.PHONY : src/Renderer.o
+
+# target to build an object file
+src/Renderer.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o
+.PHONY : src/Renderer.cpp.o
+
+src/Renderer.i: src/Renderer.cpp.i
+
+.PHONY : src/Renderer.i
+
+# target to preprocess a source file
+src/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.i
+.PHONY : src/Renderer.cpp.i
+
+src/Renderer.s: src/Renderer.cpp.s
+
+.PHONY : src/Renderer.s
+
+# target to generate assembly for a file
+src/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.s
+.PHONY : src/Renderer.cpp.s
+
 src/Shader.o: src/Shader.cpp.o
 
 .PHONY : src/Shader.o
@@ -244,32 +271,32 @@ src/Shader.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.s
 .PHONY : src/Shader.cpp.s
 
-src/VertexArray.o: src/VertexArray.cpp.o
+src/Texture.o: src/Texture.cpp.o
 
-.PHONY : src/VertexArray.o
+.PHONY : src/Texture.o
 
 # target to build an object file
-src/VertexArray.cpp.o:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o
-.PHONY : src/VertexArray.cpp.o
+src/Texture.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.o
+.PHONY : src/Texture.cpp.o
 
-src/VertexArray.i: src/VertexArray.cpp.i
+src/Texture.i: src/Texture.cpp.i
 
-.PHONY : src/VertexArray.i
+.PHONY : src/Texture.i
 
 # target to preprocess a source file
-src/VertexArray.cpp.i:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.i
-.PHONY : src/VertexArray.cpp.i
+src/Texture.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.i
+.PHONY : src/Texture.cpp.i
 
-src/VertexArray.s: src/VertexArray.cpp.s
+src/Texture.s: src/Texture.cpp.s
 
-.PHONY : src/VertexArray.s
+.PHONY : src/Texture.s
 
 # target to generate assembly for a file
-src/VertexArray.cpp.s:
-	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.s
-.PHONY : src/VertexArray.cpp.s
+src/Texture.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.s
+.PHONY : src/Texture.cpp.s
 
 src/VertexBuffer.o: src/VertexBuffer.cpp.o
 
@@ -317,12 +344,15 @@ help:
 	@echo "... src/OpenGL_Functionality.o"
 	@echo "... src/OpenGL_Functionality.i"
 	@echo "... src/OpenGL_Functionality.s"
+	@echo "... src/Renderer.o"
+	@echo "... src/Renderer.i"
+	@echo "... src/Renderer.s"
 	@echo "... src/Shader.o"
 	@echo "... src/Shader.i"
 	@echo "... src/Shader.s"
-	@echo "... src/VertexArray.o"
-	@echo "... src/VertexArray.i"
-	@echo "... src/VertexArray.s"
+	@echo "... src/Texture.o"
+	@echo "... src/Texture.i"
+	@echo "... src/Texture.s"
 	@echo "... src/VertexBuffer.o"
 	@echo "... src/VertexBuffer.i"
 	@echo "... src/VertexBuffer.s"

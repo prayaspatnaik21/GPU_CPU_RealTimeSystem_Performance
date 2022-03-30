@@ -7,7 +7,7 @@ using namespace std;
 int main(void) {
 	
 	// Read image in GrayScale mode
-	Mat image = imread("boy.jpg",1);
+	Mat image = imread("../resources/Images/Sam_1.jpg",1);
 	Size outDim = image.size();
 
 	cout << outDim << endl;
@@ -22,8 +22,6 @@ int main(void) {
 	warpAffine( image,result, rot_mat, image.size() );
 
 	imwrite("RotatedImage.jpg",result);
-
 	waitKey(0);
-
 	return 0;
 }
