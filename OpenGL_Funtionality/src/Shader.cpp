@@ -100,7 +100,7 @@ int Shader :: GetUniformLocation(std::string uniformName){
     return glGetUniformLocation(ShaderID, uniformName.c_str());
 }
 
-void Shader :: SetUniformLocation(int location,int r,int g,int b)
+void Shader :: SetUniformLocation(int location,float r,float g,float b)
 {
     glUniform4f(location,r,g,b,0.0f);
 }

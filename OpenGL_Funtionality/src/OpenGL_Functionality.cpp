@@ -85,14 +85,12 @@ int main(void)
 
     //UnBinding VertexArrayObject, Program Object,BufferData
     glBindVertexArray(0);
-    glUseProgram(0);
     glBindBuffer(GL_ARRAY_BUFFER,0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
 
     int location = shd.GetUniformLocation("u_Color");
-
-    glUseProgram(0);
-    glBindBuffer(GL_ARRAY_BUFFER,0);
+    shd.UnBind();
+    vb.UnBind();
     float r = 0.0f; 
     float g = 0.0f; 
     float b = 0.0f; 
@@ -108,7 +106,8 @@ int main(void)
         glClear(GL_COLOR_BUFFER_BIT);
 
         shd.Bind();
-        glUniform4f(location,r,g,b,0.0f);
+        shd.SetUniformLocation(location,r,g,b);
+        //glUniform4f(location,r,g,b,0.0f);
         glBindVertexArray(vao);
         ib.Bind();
         

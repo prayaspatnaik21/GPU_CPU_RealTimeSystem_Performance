@@ -21,5 +21,5 @@ class Shader
         void Bind();
         void UnBind();
         int GetUniformLocation(std::string uniformName);
-        void SetUniformLocation(int location,int r,int g,int b);
+        void SetUniformLocation(int location,float r,float g,float b);
 };
