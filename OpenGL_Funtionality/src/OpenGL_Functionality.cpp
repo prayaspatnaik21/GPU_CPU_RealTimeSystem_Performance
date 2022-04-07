@@ -50,18 +50,18 @@ int main(void)
     each vertex having a 3D position. */
     float positions[] = {
 
-        -0.5f,-0.5f,
-        0.5f,-0.5f,
-        0.5f,0.5f,
-        -0.5f,0.5f, 
+        0.5f,0.5f,0.0f,1.0f,1.0f,
+        0.5f,-0.5f,0.0f, 1.0f,0.0f,
+        -0.5f,-0.5f,0.0f,0.0f,0.0f,
+        -0.5f,0.5f,0.0f, 0.0f,1.0f
     }; 
 
     unsigned int indices[] = { 
-        0,1,2,
-        2,3,0
+        0,1,3,
+        1,2,3
     };
 
-    Mat image = imread("../resources/Images/Sam_1.jpg",1);
+    Mat image = imread("../resources/Images/Sam_0.jpg",1);
 	Size outDim = image.size();
 
     std::cout << outDim << std::endl;
@@ -73,15 +73,22 @@ int main(void)
 
 
     ///Testing Class Implementation
-    VertexBuffer vb(positions,4*2*sizeof(float));
+    VertexBuffer vb(positions,4*4*sizeof(float));
     IndexBuffer  ib(indices,6);
     Shader shd("../resources/shaders/shaders.shader");
     shd.Bind();
 
+    Texture tex(image);
+    shd.SetUniform1i("u_Texture",0);
+
     glEnableVertexAttribArray(0);
     //Location should be the index of the vertex attrib pointer
     //Inedx 0 of this vertex array is bound to currently bound gl array buffer
-    glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
+
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,(void*)(2*sizeof(float)));
+
 
     //UnBinding VertexArrayObject, Program Object,BufferData
     glBindVertexArray(0);
@@ -91,10 +98,6 @@ int main(void)
     int location = shd.GetUniformLocation("u_Color");
     shd.UnBind();
     vb.UnBind();
-    float r = 0.0f; 
-    float g = 0.0f; 
-    float b = 0.0f; 
-    float increament = 0.25f;
 
     /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
@@ -104,9 +107,9 @@ int main(void)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-
+        tex.Bind(0);
         shd.Bind();
-        shd.SetUniformLocation(location,r,g,b);
+        //shd.SetUniformLocation(location,r,g,b);
         //glUniform4f(location,r,g,b,0.0f);
         glBindVertexArray(vao);
         ib.Bind();
@@ -114,15 +117,6 @@ int main(void)
         //Use when we don't use Index Buffer and this will use that buffer which is binded
         //glDrawArrays(GL_TRIANGLES,0,6);
         glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,nullptr);
-
-        if(r > 1.0f)
-            increament = -0.05f;
-        else if(r < 0.0f)
-            increament = 0.05f;
-        
-        r+=increament;
-        g+=increament;
-        b+=increament;
 
         /*The glfwSwapBuffers will swap the color buffer (a large buffer that contains color values for each pixel in GLFW’s window) that has been used to draw in duri ng this iteration and show it as output to the screen*/
         glfwSwapBuffers(window);

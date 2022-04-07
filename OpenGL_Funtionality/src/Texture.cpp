@@ -1,8 +1,7 @@
 #include "Texture.h"
 
-Texture::Texture(const std::string& path,Mat image)
-	:PathFile(path),
-    Image(image)
+Texture::Texture(Mat image)
+	:Image(image)
 {
 	glGenTextures(1, &m_RendererID);
 	std::cout << "RenderId Texture" << " " << m_RendererID << std::endl;
@@ -14,7 +13,7 @@ Texture::Texture(const std::string& path,Mat image)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.cols, image.rows, 0, GL_BGR, GL_UNSIGNED_BYTE,Image.ptr());
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, Image.cols, Image.rows, 0, GL_BGR, GL_UNSIGNED_BYTE,Image.ptr());
     glGenerateMipmap(GL_TEXTURE_2D);
 
 	glBindTexture(GL_TEXTURE_2D, 0);

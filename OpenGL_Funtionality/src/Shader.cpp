@@ -104,3 +104,8 @@ void Shader :: SetUniformLocation(int location,float r,float g,float b)
 {
     glUniform4f(location,r,g,b,0.0f);
 }
+
+void Shader :: SetUniform1i(const std::string& name , int val)
+{
+    glUniform1i(GetUniformLocation(name),val);
+}

@@ -12,7 +12,7 @@ class Texture
 		Mat Image;
 
 	public:
-		Texture(const std::string& path,Mat image);
+		Texture(Mat image);
 		~Texture();
 
 	void Bind(unsigned int slot = 0) const;
