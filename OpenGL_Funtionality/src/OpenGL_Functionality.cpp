@@ -1,18 +1,5 @@
-// #include <GL/glew.h>
-// #include <GLFW/glfw3.h> 
-// #include <opencv2/opencv.hpp>
-// #include <malloc.h>
-// #include <iostream>
-// #include <fstream>
-// #include <string>
-// #include <sstream>
 #include "Headers.h"
 #include "Renderer.h"
-// #include "Texture.h"
-//#include "VertexBuffer.h"
-// #include "VertexArray.h"
-// #include "IndexBuffer.h"
-// #include "Shader.h"
 
 using namespace cv;
 
