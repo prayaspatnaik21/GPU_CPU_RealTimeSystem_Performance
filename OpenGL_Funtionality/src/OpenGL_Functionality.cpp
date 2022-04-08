@@ -1,17 +1,18 @@
-#include <GL/glew.h>
-#include <GLFW/glfw3.h> 
-#include <opencv2/opencv.hpp>
-#include <malloc.h>
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
+// #include <GL/glew.h>
+// #include <GLFW/glfw3.h> 
+// #include <opencv2/opencv.hpp>
+// #include <malloc.h>
+// #include <iostream>
+// #include <fstream>
+// #include <string>
+// #include <sstream>
+#include "Headers.h"
 #include "Renderer.h"
-#include "Texture.h"
+// #include "Texture.h"
 //#include "VertexBuffer.h"
-#include "VertexArray.h"
-#include "IndexBuffer.h"
-#include "Shader.h"
+// #include "VertexArray.h"
+// #include "IndexBuffer.h"
+// #include "Shader.h"
 
 using namespace cv;
 
@@ -49,13 +50,6 @@ int main(void)
 
     /*we want to render a single triangle we want to specify a total of three vertices with
     each vertex having a 3D position. */
-    float positions[] = {
-
-        0.5f,0.5f,0.0f,1.0f,1.0f,
-        0.5f,-0.5f,0.0f, 1.0f,0.0f,
-        -0.5f,-0.5f,0.0f,0.0f,0.0f,
-        -0.5f,0.5f,0.0f, 0.0f,1.0f
-    }; 
 
     unsigned int indices[] = { 
         0,1,3,
@@ -66,38 +60,11 @@ int main(void)
     flip(image,image,0);
 	Size outDim = image.size();
 
-    //VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
-    // unsigned int vao;
-    // glGenVertexArrays(1,&vao);
-    // glBindVertexArray(vao);
-    VertexArray va;
-    ///Testing Class Implementation
-    //VertexBuffer vb(positions,5*4*sizeof(float));
-    IndexBuffer  ib(indices,6);
-    Shader shd("../resources/shaders/shaders.shader");
-    shd.Bind();
+    std::string shaderPath = "../resources/shaders/shaders.shader";
 
-    Texture tex(image);
-    shd.SetUniform1i("u_Texture",0);
-    va.AddBuffer();
-    // glEnableVertexAttribArray(0);
-    //Location should be the index of the vertex attrib pointer
-    //Inedx 0 of this vertex array is bound to currently bound gl array buffer
-    // glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(float)*5,0);
-
-    // glEnableVertexAttribArray(1);
-    // glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,sizeof(float)*5,(void*)(3*sizeof(float)));
-
-
-    //UnBinding VertexArrayObject, Program Object,BufferData
-    glBindVertexArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER,0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
-
-    int location = shd.GetUniformLocation("u_Color");
-    shd.UnBind();
-    va.UnBind();
-    //vb.UnBind();
+    Renderer RendererObject(image,shaderPath);
+    RendererObject.AddBuffer();
+    RendererObject.UnBind();
 
     /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
@@ -107,17 +74,11 @@ int main(void)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-        tex.Bind(0);
-        shd.Bind();
-        //shd.SetUniformLocation(location,r,g,b);
-        //glUniform4f(location,0.2,1.0,1.0,0.0f);
-        //glBindVertexArray(vao);
-        va.Bind();
-        ib.Bind();
-        
+        RendererObject.Bind();
+        RendererObject.Draw();
+
         //Use when we don't use Index Buffer and this will use that buffer which is binded
-        //glDrawArrays(GL_TRIANGLES,0,6);
-        glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,nullptr);
+       
 
         /*The glfwSwapBuffers will swap the color buffer (a large buffer that contains color values for each pixel in GLFW’s window) that has been used to draw in duri ng this iteration and show it as output to the screen*/
         glfwSwapBuffers(window);
