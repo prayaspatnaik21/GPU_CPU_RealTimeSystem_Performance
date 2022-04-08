@@ -61,7 +61,8 @@ int main(void)
         1,2,3
     };
 
-    Mat image = imread("../resources/Images/Sam_0.jpg",1);
+    Mat image = imread("../resources/Images/Sam_1.jpg",1);
+    flip(image,image,0);
 	Size outDim = image.size();
 
     std::cout << outDim << std::endl;
@@ -71,9 +72,8 @@ int main(void)
     glGenVertexArrays(1,&vao);
     glBindVertexArray(vao);
 
-
     ///Testing Class Implementation
-    VertexBuffer vb(positions,4*4*sizeof(float));
+    VertexBuffer vb(positions,5*4*sizeof(float));
     IndexBuffer  ib(indices,6);
     Shader shd("../resources/shaders/shaders.shader");
     shd.Bind();
@@ -84,10 +84,10 @@ int main(void)
     glEnableVertexAttribArray(0);
     //Location should be the index of the vertex attrib pointer
     //Inedx 0 of this vertex array is bound to currently bound gl array buffer
-    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(float)*5,0);
 
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,(void*)(2*sizeof(float)));
+    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,sizeof(float)*5,(void*)(3*sizeof(float)));
 
 
     //UnBinding VertexArrayObject, Program Object,BufferData
@@ -110,7 +110,7 @@ int main(void)
         tex.Bind(0);
         shd.Bind();
         //shd.SetUniformLocation(location,r,g,b);
-        //glUniform4f(location,r,g,b,0.0f);
+        //glUniform4f(location,0.2,1.0,1.0,0.0f);
         glBindVertexArray(vao);
         ib.Bind();
         
