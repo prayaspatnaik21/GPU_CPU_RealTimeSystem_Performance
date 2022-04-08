@@ -298,6 +298,33 @@ src/Texture.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.s
 .PHONY : src/Texture.cpp.s
 
+src/Transformation.o: src/Transformation.cpp.o
+
+.PHONY : src/Transformation.o
+
+# target to build an object file
+src/Transformation.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Transformation.cpp.o
+.PHONY : src/Transformation.cpp.o
+
+src/Transformation.i: src/Transformation.cpp.i
+
+.PHONY : src/Transformation.i
+
+# target to preprocess a source file
+src/Transformation.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Transformation.cpp.i
+.PHONY : src/Transformation.cpp.i
+
+src/Transformation.s: src/Transformation.cpp.s
+
+.PHONY : src/Transformation.s
+
+# target to generate assembly for a file
+src/Transformation.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_Functionality.dir/build.make CMakeFiles/OpenGL_Functionality.dir/src/Transformation.cpp.s
+.PHONY : src/Transformation.cpp.s
+
 src/VertexArray.o: src/VertexArray.cpp.o
 
 .PHONY : src/VertexArray.o
@@ -380,6 +407,9 @@ help:
 	@echo "... src/Texture.o"
 	@echo "... src/Texture.i"
 	@echo "... src/Texture.s"
+	@echo "... src/Transformation.o"
+	@echo "... src/Transformation.i"
+	@echo "... src/Transformation.s"
 	@echo "... src/VertexArray.o"
 	@echo "... src/VertexArray.i"
 	@echo "... src/VertexArray.s"

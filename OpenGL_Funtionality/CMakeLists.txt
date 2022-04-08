@@ -45,7 +45,7 @@ add_definitions(${GLM_DEFINITIONS})
 # INCLUDE OPENCV DIRECTORIES
 include_directories( ${OpenCV_INCLUDE_DIRS} ${glew_inc} ${glew_src} ${glfw_inc} ${glfw_src} ${GLM_INCLUDE_DIRS})
 
-set(SOURCES src/OpenGL_Functionality.cpp src/Renderer.cpp src/Renderer.h src/VertexBuffer.cpp src/VertexBuffer.h src/IndexBuffer.cpp src/IndexBuffer.h src/Shader.cpp src/Shader.h src/Texture.cpp src/Texture.h src/VertexArray.cpp src/VertexArray.h src/Headers.h src/Renderer.cpp src/Renderer.h)
+set(SOURCES src/OpenGL_Functionality.cpp src/Renderer.cpp src/Renderer.h src/VertexBuffer.cpp src/VertexBuffer.h src/IndexBuffer.cpp src/IndexBuffer.h src/Shader.cpp src/Shader.h src/Texture.cpp src/Texture.h src/VertexArray.cpp src/VertexArray.h src/Headers.h src/Renderer.cpp src/Renderer.h src/Transformation.h src/Transformation.cpp)
 
 # MACRO TO COMPILE CPP FILES
 # Do Not Edits

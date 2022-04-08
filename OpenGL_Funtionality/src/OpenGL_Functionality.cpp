@@ -1,5 +1,6 @@
 #include "Headers.h"
 #include "Renderer.h"
+#include "Transformation.h"
 
 using namespace cv;
 
@@ -48,12 +49,14 @@ int main(void)
 	Size outDim = image.size();
     std::cout << outDim;
 
-    glm::mat4 trans = glm::mat4(1.0f);
-    trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
+    Transformation Transform;
 
+    glm::mat4 RotationMatrix = Transform.GetRotationMatrix(90.0f);
+
+    glm::mat4 TranslationMatrix = Transform.GetTranslationMatrix(glm::vec3(0.5f,0.0f,0.0f));
     std::string shaderPath = "../resources/shaders/shaders.shader";
     
-    Renderer RendererObject(image,shaderPath,trans);
+    Renderer RendererObject(image,shaderPath,TranslationMatrix);
     RendererObject.AddBuffer();
     RendererObject.UnBind();
 

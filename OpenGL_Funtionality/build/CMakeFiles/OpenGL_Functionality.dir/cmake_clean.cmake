@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o"
   "CMakeFiles/OpenGL_Functionality.dir/src/Shader.cpp.o"
   "CMakeFiles/OpenGL_Functionality.dir/src/Texture.cpp.o"
+  "CMakeFiles/OpenGL_Functionality.dir/src/Transformation.cpp.o"
   "CMakeFiles/OpenGL_Functionality.dir/src/VertexArray.cpp.o"
   "CMakeFiles/OpenGL_Functionality.dir/src/VertexBuffer.cpp.o"
   "OpenGL_Functionality"
