@@ -29,8 +29,8 @@ Renderer.h
 /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
 Texture.h
 /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Texture.h
-VertexBuffer.h
-/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
+VertexArray.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.h
 IndexBuffer.h
 /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/IndexBuffer.h
 Shader.h
@@ -57,6 +57,18 @@ Renderer.h
 /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Texture.h
 Renderer.h
 /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
+
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.cpp
+VertexArray.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.h
+Renderer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/Renderer.h
+
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexArray.h
+VertexBuffer.h
+/home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
+memory
+-
 
 /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenGL_Funtionality/src/VertexBuffer.h
 

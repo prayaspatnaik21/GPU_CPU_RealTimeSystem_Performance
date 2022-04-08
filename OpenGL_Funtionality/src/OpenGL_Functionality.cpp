@@ -8,7 +8,8 @@
 #include <sstream>
 #include "Renderer.h"
 #include "Texture.h"
-#include "VertexBuffer.h"
+//#include "VertexBuffer.h"
+#include "VertexArray.h"
 #include "IndexBuffer.h"
 #include "Shader.h"
 
@@ -65,29 +66,27 @@ int main(void)
     flip(image,image,0);
 	Size outDim = image.size();
 
-    std::cout << outDim << std::endl;
-
     //VertexArray are a way to bind vertex buffer with a certain specification of layout of that actual vertex buffer
-    unsigned int vao;
-    glGenVertexArrays(1,&vao);
-    glBindVertexArray(vao);
-
+    // unsigned int vao;
+    // glGenVertexArrays(1,&vao);
+    // glBindVertexArray(vao);
+    VertexArray va;
     ///Testing Class Implementation
-    VertexBuffer vb(positions,5*4*sizeof(float));
+    //VertexBuffer vb(positions,5*4*sizeof(float));
     IndexBuffer  ib(indices,6);
     Shader shd("../resources/shaders/shaders.shader");
     shd.Bind();
 
     Texture tex(image);
     shd.SetUniform1i("u_Texture",0);
-
-    glEnableVertexAttribArray(0);
+    va.AddBuffer();
+    // glEnableVertexAttribArray(0);
     //Location should be the index of the vertex attrib pointer
     //Inedx 0 of this vertex array is bound to currently bound gl array buffer
-    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(float)*5,0);
+    // glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(float)*5,0);
 
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,sizeof(float)*5,(void*)(3*sizeof(float)));
+    // glEnableVertexAttribArray(1);
+    // glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,sizeof(float)*5,(void*)(3*sizeof(float)));
 
 
     //UnBinding VertexArrayObject, Program Object,BufferData
@@ -97,7 +96,8 @@ int main(void)
 
     int location = shd.GetUniformLocation("u_Color");
     shd.UnBind();
-    vb.UnBind();
+    va.UnBind();
+    //vb.UnBind();
 
     /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
@@ -111,7 +111,8 @@ int main(void)
         shd.Bind();
         //shd.SetUniformLocation(location,r,g,b);
         //glUniform4f(location,0.2,1.0,1.0,0.0f);
-        glBindVertexArray(vao);
+        //glBindVertexArray(vao);
+        va.Bind();
         ib.Bind();
         
         //Use when we don't use Index Buffer and this will use that buffer which is binded
