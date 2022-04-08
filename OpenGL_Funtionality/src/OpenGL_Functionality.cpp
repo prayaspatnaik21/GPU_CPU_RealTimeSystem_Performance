@@ -16,7 +16,7 @@ int main(void)
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(1280, 960, "Hello World", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -44,7 +44,7 @@ int main(void)
         1,2,3
     };
 
-    Mat image = imread("../resources/Images/Sam_1.jpg",1);
+    Mat image = imread("../resources/Images/Sam_0.jpg",1);
     flip(image,image,0);
 	Size outDim = image.size();
     std::cout << outDim;
@@ -56,13 +56,12 @@ int main(void)
     glm::mat4 TranslationMatrix = Transform.GetTranslationMatrix(glm::vec3(0.5f,0.0f,0.0f));
     std::string shaderPath = "../resources/shaders/shaders.shader";
     
-    Renderer RendererObject(image,shaderPath,TranslationMatrix);
+    Renderer RendererObject(image,shaderPath,RotationMatrix);
     RendererObject.AddBuffer();
     RendererObject.UnBind();
 
     RendererObject.Bind();
     RendererObject.SetUniformli();
-    //RendererObject.SetUniformli();
         /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
     has been instructed to close, if so, the function returns true and the game loop stops     running, after which we can close the application */
@@ -72,9 +71,6 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
         RendererObject.Draw();
-        // RendererObject.Bind();
-        // RendererObject.SetUniformli();
-        //RendererObject.Draw();
 
         //Use when we don't use Index Buffer and this will use that buffer which is binded
        

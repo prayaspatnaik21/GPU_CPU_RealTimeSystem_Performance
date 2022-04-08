@@ -7,7 +7,7 @@ using namespace std;
 int main(void) {
 	
 	// Read image in GrayScale mode
-	Mat image = imread("../resources/Images/Sam_1.jpg",1);
+	Mat image = imread("../resources/Images/Sam_0.jpg",1);
 	Size outDim = image.size();
 
 	cout << outDim << endl;
