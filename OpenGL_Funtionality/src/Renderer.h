@@ -15,14 +15,15 @@ class Renderer
         Mat InputImage;
 
         std::string ShaderPath;
+        glm::mat4 TransformationMatrix;
 
         std::shared_ptr<VertexArray> VertexArrayobject;
-        std::shared_ptr<Shader> ShaderObect;
+        std::shared_ptr<Shader> ShaderObject;
         std::shared_ptr<Texture> TextureObject;
         std::shared_ptr<IndexBuffer> IndexBufferObject;
 
     public:
-        Renderer(Mat image,std::string ShaderPath);
+        Renderer(Mat image,std::string ShaderPath,glm::mat4 trans);
         ~Renderer();
 
         void Draw();

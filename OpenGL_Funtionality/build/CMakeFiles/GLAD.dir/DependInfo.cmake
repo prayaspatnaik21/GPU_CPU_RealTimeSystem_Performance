@@ -15,6 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/local/include/glew/src"
   "/usr/local/include/glfw/include/GLFW"
   "/usr/local/include/glfw/src"
+  "/usr/lib/cmake/glm"
   )
 
 # Targets to which this target links.

@@ -23,4 +23,5 @@ class Shader
         int GetUniformLocation(std::string uniformName);
         void SetUniformLocation(int location,float r,float g,float b);
         void SetUniform1i(const std:: string& name, int value);
+        void SetUniformMatrix4fv(const std::string& uniformName , const glm::mat4& matrix);
 };

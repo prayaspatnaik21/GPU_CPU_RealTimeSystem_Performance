@@ -29,9 +29,10 @@ set(OpenGL_GL_PREFERENCE "GLVND")
 find_package( OpenCV REQUIRED )
 find_package( OpenGL REQUIRED )
 find_package( GLEW REQUIRED )
+find_package( glm REQUIRED)
 
 add_library(GLAD  "resources/glad.c")
-set(LIBS    glfw    ${OPENGL_LIBRARY}   GLAD    ${OpenCV_LIBS} ${GLEW_LIBRARIES})
+set(LIBS    glfw    ${OPENGL_LIBRARY}   GLAD    ${OpenCV_LIBS} ${GLEW_LIBRARIES} ${GLM_LIBRARY_DIRS})
 
 SET(PROJECT_DEPS "/usr/local/include")
 SET(glew_inc "${PROJECT_DEPS}/glew/include/GL/")
@@ -39,8 +40,10 @@ SET(glew_src "${PROJECT_DEPS}/glew/src/")
 SET(glfw_inc "${PROJECT_DEPS}/glfw/include/GLFW/")
 SET(glfw_src "${PROJECT_DEPS}/glfw/src/")
 
+add_definitions(${GLM_DEFINITIONS})
+
 # INCLUDE OPENCV DIRECTORIES
-include_directories( ${OpenCV_INCLUDE_DIRS} ${glew_inc} ${glew_src} ${glfw_inc} ${glfw_src})
+include_directories( ${OpenCV_INCLUDE_DIRS} ${glew_inc} ${glew_src} ${glfw_inc} ${glfw_src} ${GLM_INCLUDE_DIRS})
 
 set(SOURCES src/OpenGL_Functionality.cpp src/Renderer.cpp src/Renderer.h src/VertexBuffer.cpp src/VertexBuffer.h src/IndexBuffer.cpp src/IndexBuffer.h src/Shader.cpp src/Shader.h src/Texture.cpp src/Texture.h src/VertexArray.cpp src/VertexArray.h src/Headers.h src/Renderer.cpp src/Renderer.h)
 

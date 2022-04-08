@@ -46,14 +46,21 @@ int main(void)
     Mat image = imread("../resources/Images/Sam_1.jpg",1);
     flip(image,image,0);
 	Size outDim = image.size();
+    std::cout << outDim;
+
+    glm::mat4 trans = glm::mat4(1.0f);
+    trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
 
     std::string shaderPath = "../resources/shaders/shaders.shader";
-
-    Renderer RendererObject(image,shaderPath);
+    
+    Renderer RendererObject(image,shaderPath,trans);
     RendererObject.AddBuffer();
     RendererObject.UnBind();
 
-    /* Loop until the user  closes the window */
+    RendererObject.Bind();
+    RendererObject.SetUniformli();
+    //RendererObject.SetUniformli();
+        /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
     has been instructed to close, if so, the function returns true and the game loop stops     running, after which we can close the application */
     
@@ -61,8 +68,10 @@ int main(void)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-        RendererObject.Bind();
         RendererObject.Draw();
+        // RendererObject.Bind();
+        // RendererObject.SetUniformli();
+        //RendererObject.Draw();
 
         //Use when we don't use Index Buffer and this will use that buffer which is binded
        

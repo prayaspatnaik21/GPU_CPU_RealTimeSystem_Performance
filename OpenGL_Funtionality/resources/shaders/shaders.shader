@@ -1,14 +1,17 @@
 #shader vertex
 #version 330 core
 
-layout(location = 0) in vec4 positions;
+layout(location = 0) in vec3 positions;
 layout(location = 1) in vec2 texCoord;
 
+uniform mat4 transform;
+
 out vec2 v_TexCoord;
+
 void main()
 {
- gl_Position = positions;
- v_TexCoord = texCoord;
+   gl_Position = transform *vec4(positions,1.0f);
+   v_TexCoord = texCoord;
 };
 
 #shader fragment

@@ -6,5 +6,5 @@ C_FLAGS =
 
 C_DEFINES = 
 
-C_INCLUDES = -I/usr/local/include/opencv4 -I/usr/local/include/glew/include/GL -I/usr/local/include/glew/src -I/usr/local/include/glfw/include/GLFW -I/usr/local/include/glfw/src 
+C_INCLUDES = -I/usr/local/include/opencv4 -I/usr/local/include/glew/include/GL -I/usr/local/include/glew/src -I/usr/local/include/glfw/include/GLFW -I/usr/local/include/glfw/src -I/usr/lib/cmake/glm 
 

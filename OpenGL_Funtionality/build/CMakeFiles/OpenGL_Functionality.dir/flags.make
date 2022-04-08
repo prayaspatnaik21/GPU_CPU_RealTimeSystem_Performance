@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include/glew/include/GL -I/usr/local/include/glew/src -I/usr/local/include/glfw/include/GLFW -I/usr/local/include/glfw/src -isystem /usr/local/include/opencv4 
+CXX_INCLUDES = -I/usr/local/include/glew/include/GL -I/usr/local/include/glew/src -I/usr/local/include/glfw/include/GLFW -I/usr/local/include/glfw/src -I/usr/lib/cmake/glm -isystem /usr/local/include/opencv4 
 
