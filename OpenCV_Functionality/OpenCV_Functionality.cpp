@@ -3,11 +3,13 @@
 
 using namespace cv;
 using namespace std;
+using namespace std::chrono;
 
 int main(void) {
-	
+
 	// Read image in GrayScale mode
 	Mat image = imread("../resources/Images/Sam_0.jpg",1);
+	
 	Size outDim = image.size();
 
 	cout << outDim << endl;
@@ -18,10 +20,14 @@ int main(void) {
 	double angle = 90.0;
 	double scale = 1;
 
+	auto start = high_resolution_clock::now();
 	Mat rot_mat = getRotationMatrix2D( center, angle, scale );
 	warpAffine( image,result, rot_mat, image.size() );
-
-	imwrite("RotatedImage.jpg",result);
-	waitKey(0);
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	cout << duration.count() << endl;
+	cv::imshow(" image1", result);
+	cv::waitKey(0);
+	
 	return 0;
 }

@@ -1,6 +1,7 @@
 #include "Headers.h"
 #include "Renderer.h"
 #include "Transformation.h"
+using namespace std::chrono;
 
 using namespace cv;
 
@@ -65,12 +66,25 @@ int main(void)
         /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
     has been instructed to close, if so, the function returns true and the game loop stops     running, after which we can close the application */
-    
+    std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(480, 640, CV_8UC3);
+    glReadBuffer(GL_COLOR_ATTACHMENT0);
+    glReadPixels(0, 0, 640, 480,
+                   GL_RGBA, GL_UNSIGNED_BYTE,
+                   gl_out->data);
+    //cv::cvtColor(*gl_out, *gl_out, cv::COLOR_RGBA2RGB);
+    cv::imshow(" image1", *gl_out);
+    cv::waitKey(0);
+
     while (!glfwWindowShouldClose(window))
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
+        auto start = high_resolution_clock::now();
         RendererObject.Draw();
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<microseconds>(stop - start);
+        std::cout << "Time taken by Draw Function: "
+         << duration.count() << " microseconds" << std::endl;
 
         //Use when we don't use Index Buffer and this will use that buffer which is binded
        
