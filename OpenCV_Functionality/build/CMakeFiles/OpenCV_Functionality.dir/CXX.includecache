@@ -9,6 +9,8 @@
 /home/prayas/Home/UTD_SPRING_2022/CS_6396_RealTimeSystem/Projects/GPU_CPU_RealTimeSystem_Performance/OpenCV_Functionality/OpenCV_Functionality.cpp
 iostream
 -
+string
+-
 opencv2/opencv.hpp
 -
 

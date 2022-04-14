@@ -17,7 +17,13 @@ int main(void)
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(1280, 960, "Hello World", NULL, NULL);
+
+    Mat image = imread("../resources/Images/Sam_0.jpg",1);
+    flip(image,image,0);
+    std::cout << "Image Resolution" << " " << image.cols << "X" << image.rows << std::endl;
+	
+
+    window = glfwCreateWindow(image.cols, image.rows, "Hello World", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -45,11 +51,6 @@ int main(void)
         1,2,3
     };
 
-    Mat image = imread("../resources/Images/Sam_0.jpg",1);
-    flip(image,image,0);
-	Size outDim = image.size();
-    std::cout << outDim;
-
     Transformation Transform;
 
     glm::mat4 RotationMatrix = Transform.GetRotationMatrix(90.0f);
@@ -66,35 +67,38 @@ int main(void)
         /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
     has been instructed to close, if so, the function returns true and the game loop stops     running, after which we can close the application */
-    std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(480, 640, CV_8UC3);
-    glReadBuffer(GL_COLOR_ATTACHMENT0);
-    glReadPixels(0, 0, 640, 480,
-                   GL_RGBA, GL_UNSIGNED_BYTE,
-                   gl_out->data);
-    //cv::cvtColor(*gl_out, *gl_out, cv::COLOR_RGBA2RGB);
+    std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(image.rows, image.cols, CV_8UC3);
+   
+    glGetTexImage(GL_TEXTURE_2D, 0, GL_BGR, GL_UNSIGNED_BYTE, gl_out->data);
+    auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+
+	std::cout << "Time taken by function: "
+         << duration.count() << " microseconds" << std::endl;
+    
     cv::imshow(" image1", *gl_out);
     cv::waitKey(0);
 
-    while (!glfwWindowShouldClose(window))
-    {
-        /* Render here */
-        glClear(GL_COLOR_BUFFER_BIT);
-        auto start = high_resolution_clock::now();
-        RendererObject.Draw();
-        auto stop = high_resolution_clock::now();
-        auto duration = duration_cast<microseconds>(stop - start);
-        std::cout << "Time taken by Draw Function: "
-         << duration.count() << " microseconds" << std::endl;
+    // while (!glfwWindowShouldClose(window))
+    // {
+    //     /* Render here */
+    //     glClear(GL_COLOR_BUFFER_BIT);
+    //     auto start = high_resolution_clock::now();
+    //     RendererObject.Draw();
+    //     auto stop = high_resolution_clock::now();
+    //     auto duration = duration_cast<microseconds>(stop - start);
+    //     std::cout << "Time taken by Draw Function: "
+    //      << duration.count() << " microseconds" << std::endl;
 
-        //Use when we don't use Index Buffer and this will use that buffer which is binded
+    //     //Use when we don't use Index Buffer and this will use that buffer which is binded
        
 
-        /*The glfwSwapBuffers will swap the color buffer (a large buffer that contains color values for each pixel in GLFW’s window) that has been used to draw in duri ng this iteration and show it as output to the screen*/
-        glfwSwapBuffers(window);
+    //     /*The glfwSwapBuffers will swap the color buffer (a large buffer that contains color values for each pixel in GLFW’s window) that has been used to draw in duri ng this iteration and show it as output to the screen*/
+    //     glfwSwapBuffers(window);
 
-        /*The glfwPollEvents function checks if any events are triggered (like keyboard input or mouse movement events) and calls the corresponding functions (which we can set via callback methods)*/
-        glfwPollEvents(); 
-    }
+    //     /*The glfwPollEvents function checks if any events are triggered (like keyboard input or mouse movement events) and calls the corresponding functions (which we can set via callback methods)*/
+    //     glfwPollEvents(); 
+    // }
 
     //glDeleteProgram(shader);
 
