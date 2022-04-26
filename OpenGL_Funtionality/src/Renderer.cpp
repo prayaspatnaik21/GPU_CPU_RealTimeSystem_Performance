@@ -1,20 +1,18 @@
 #include "Renderer.h"
 
 
-Renderer::Renderer(Mat image,std::string shaderPath,glm::mat4 trans)
-    :InputImage(image),
-    ShaderPath(shaderPath),
+Renderer::Renderer(std::string shaderPath,glm::mat4 trans)
+    :ShaderPath(shaderPath),
     TransformationMatrix(trans)
 {
     VertexArrayobject=std::make_shared<VertexArray>();
     ShaderObject=std::make_shared<Shader>(ShaderPath);
-    TextureObject=std::make_shared<Texture>(InputImage);
+    // TextureObject=std::make_shared<Texture>(InputImage);
     IndexBufferObject=std::make_shared<IndexBuffer>(Indices,6);
 }
 
 Renderer:: ~Renderer()
 {
-
 }
 
 void Renderer::Draw()
@@ -24,7 +22,7 @@ void Renderer::Draw()
 
 void Renderer::Bind()
 {
-    TextureObject->Bind(0);
+    //TextureObject->Bind(0);
     ShaderObject->Bind();
     VertexArrayobject->Bind();
     IndexBufferObject->Bind();
@@ -32,7 +30,7 @@ void Renderer::Bind()
 
 void Renderer::UnBind()
 {
-    TextureObject->UnBind();
+    //TextureObject->UnBind();
     ShaderObject->UnBind();
     VertexArrayobject->UnBind();
     IndexBufferObject->UnBind();

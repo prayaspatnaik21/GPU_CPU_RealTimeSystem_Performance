@@ -6,7 +6,6 @@ CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: ../src/IndexBuffer.cp
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: ../src/IndexBuffer.h
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: ../src/Renderer.h
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: ../src/Shader.h
-CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: ../src/Texture.h
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: ../src/VertexArray.h
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: ../src/VertexBuffer.h
 CMakeFiles/OpenGL_Functionality.dir/src/IndexBuffer.cpp.o: /usr/local/include/opencv4/opencv2/calib3d.hpp
@@ -227,7 +226,6 @@ CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: ../src/IndexBuffer.h
 CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: ../src/Renderer.cpp
 CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: ../src/Renderer.h
 CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: ../src/Shader.h
-CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: ../src/Texture.h
 CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: ../src/VertexArray.h
 CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: ../src/VertexBuffer.h
 CMakeFiles/OpenGL_Functionality.dir/src/Renderer.cpp.o: /usr/local/include/opencv4/opencv2/calib3d.hpp

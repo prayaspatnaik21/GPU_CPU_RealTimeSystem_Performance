@@ -42,3 +42,7 @@
     1.[Khronos](https://www.khronos.org/registry/OpenGL/index_gl.php)
     2.[OpenGL Docs](https://docs.gl/#)
     3.[IEEE Paper](https://ieeexplore.ieee.org/document/7892841)
+
+## GPU Specifications
+
+    glxinfo -B | less
