@@ -13,13 +13,7 @@ Texture::Texture(Mat image)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-	auto start = high_resolution_clock::now();
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, Image.cols, Image.rows, 0, GL_BGR, GL_UNSIGNED_BYTE,Image.ptr());
-	auto stop = high_resolution_clock::now();
-	auto duration = duration_cast<microseconds>(stop - start);
-
-	std::cout << "Time taken by function: "
-         << duration.count() << " microseconds" << std::endl;
 		 
     glGenerateMipmap(GL_TEXTURE_2D);
 
@@ -42,4 +36,9 @@ void Texture::Bind(unsigned int slot) const
 void Texture::UnBind() const
 {
 	glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+unsigned int Texture :: ReturnRenderID() const
+{
+	return m_RendererID;
 }

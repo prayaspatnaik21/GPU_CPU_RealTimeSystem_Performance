@@ -17,4 +17,5 @@ class Texture
 
 	void Bind(unsigned int slot = 0) const;
 	void UnBind() const;
+	unsigned int ReturnRenderID() const;
 };

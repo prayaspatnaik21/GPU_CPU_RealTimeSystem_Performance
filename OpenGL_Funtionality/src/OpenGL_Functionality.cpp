@@ -8,6 +8,31 @@ using namespace cv;
 
 int main(void)
 {
+    std::cout << "Choose the type of Shader\n"
+            "GreyScale Shader 1\n"
+            "Guassian Filter shader 2\n"
+            "Edge Detector Shader 3"<<std::endl;
+
+    int chooseShader{0};
+    std::cin >> chooseShader;
+
+    std::string shaderPath  = " ";
+
+    switch(chooseShader)
+    {
+        case 1:
+            shaderPath = "../resources/shaders/shaderGrey.shader";
+            break;
+        case 2:
+            shaderPath = "../resources/shaders/shaderGaussian.shader";
+            break;
+        case 3:
+            shaderPath = "../resources/shaders/shaderEdgeDetector.shader";
+            break;
+        default:
+            shaderPath = "../resources/shaders/shaders.shader"; 
+    }
+
     GLFWwindow* window;
 
     /* Initialize the library */
@@ -20,7 +45,7 @@ int main(void)
     /* Create a windowed mode window and its OpenGL context */
 
     Mat image = imread("../resources/Images/Sam_0.jpg",1);
-    flip(image,image,0);
+    //flip(image,image,0);
     std::cout << "Image Resolution" << " " << image.cols << "X" << image.rows << std::endl;
 	
 
@@ -55,9 +80,6 @@ int main(void)
     Transformation Transform;
 
     glm::mat4 RotationMatrix = Transform.GetRotationMatrix(90.0f);
-
-    glm::mat4 TranslationMatrix = Transform.GetTranslationMatrix(glm::vec3(0.5f,0.0f,0.0f));
-    std::string shaderPath = "../resources/shaders/shaders.shader";
     
     auto start = high_resolution_clock::now();
     Renderer RendererObject(shaderPath,RotationMatrix);
@@ -66,47 +88,54 @@ int main(void)
 
     RendererObject.Bind();
 
-    //
     auto TextureObject=std::make_shared<Texture>(image);
+    
     //TextureObject->UnBind();
     TextureObject->Bind();
 
     RendererObject.SetUniformli();
+    RendererObject.Draw();
         /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
     has been instructed to close, if so, the function returns true and the game loop stops     running, after which we can close the application */
-    // std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(image.rows, image.cols, CV_8UC3);
+    std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(image.rows, image.cols, CV_8UC3);
+
+    glReadBuffer(GL_COLOR_ATTACHMENT0);
    
-    // glGetTexImage(GL_TEXTURE_2D, 0, GL_BGR, GL_UNSIGNED_BYTE, gl_out->data);
-    // // auto stop = high_resolution_clock::now();
-	// // auto duration = duration_cast<microseconds>(stop - start);
+    glGetTexImage(GL_TEXTURE_2D, 0, GL_BGR, GL_UNSIGNED_BYTE, gl_out->data);
+    // auto stop = high_resolution_clock::now();
+	// auto duration = duration_cast<microseconds>(stop - start);
 
-	// // std::cout << "Time taken by function: "
-    // //      << duration.count() << " microseconds" << std::endl;
-    
-    // cv::imshow(" image1", *gl_out);
-    // cv::waitKey(0);
+	// std::cout << "Time taken by function: "
+    //      << duration.count() << " microseconds" << std::endl;
+    //flip(*gl_out,*gl_out,0);
+    cv::imshow(" image1", *gl_out);
+    cv::waitKey(0);
 
+    // glClear(GL_COLOR_BUFFER_BIT);
+    // RendererObject.Draw();
+    // glfwSwapBuffers(window);
+    // glfwPollEvents(); 
+
+
+       /* Loop until the user  closes the window */
+    /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
+    has been instructed to close, if so, the function returns true and the game loop stops     running, after which we can close the application */
     while (!glfwWindowShouldClose(window))
     {
-        /* Render here */
-        glClear(GL_COLOR_BUFFER_BIT);
-        auto start = high_resolution_clock::now();
-        RendererObject.Draw();
-        auto stop = high_resolution_clock::now();
-        auto duration = duration_cast<microseconds>(stop - start);
-        std::cout << "Time taken by Draw Function: "
-         << duration.count() << " microseconds" << std::endl;
+         /* Render here */
+         glClear(GL_COLOR_BUFFER_BIT);
+         RendererObject.Draw();
 
-        //Use when we don't use Index Buffer and this will use that buffer which is binded
+    //     //Use when we don't use Index Buffer and this will use that buffer which is binded
        
 
-        /*The glfwSwapBuffers will swap the color buffer (a large buffer that contains color values for each pixel in GLFW’s window) that has been used to draw in duri ng this iteration and show it as output to the screen*/
-        glfwSwapBuffers(window);
+    //     /*The glfwSwapBuffers will swap the color buffer (a large buffer that contains color values for each pixel in GLFW’s window) that has been used to draw in duri ng this iteration and show it as output to the screen*/
+         glfwSwapBuffers(window);
 
-        /*The glfwPollEvents function checks if any events are triggered (like keyboard input or mouse movement events) and calls the corresponding functions (which we can set via callback methods)*/
-        glfwPollEvents(); 
-    }
+    //     /*The glfwPollEvents function checks if any events are triggered (like keyboard input or mouse movement events) and calls the corresponding functions (which we can set via callback methods)*/
+         glfwPollEvents(); 
+     }
 
     //glDeleteProgram(shader);
 

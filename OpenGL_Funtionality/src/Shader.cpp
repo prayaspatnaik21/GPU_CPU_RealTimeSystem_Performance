@@ -107,12 +107,10 @@ void Shader :: SetUniformLocation(int location,float r,float g,float b)
 
 void Shader :: SetUniform1i(const std::string& name , int val)
 {
-    std::cout << " Set nameeee";
     glUniform1i(GetUniformLocation(name),val);
 }
 
 void Shader ::  SetUniformMatrix4fv(const std::string& uniformName , const glm::mat4& matrix)
 {
-    std::cout << "Location" << GetUniformLocation(uniformName) << std::endl; 
     glUniformMatrix4fv(GetUniformLocation(uniformName), 1, GL_FALSE, glm::value_ptr(matrix));
 }
