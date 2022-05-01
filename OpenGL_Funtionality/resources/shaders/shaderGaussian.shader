@@ -21,7 +21,7 @@ layout(location = 0)
 out vec4 color;
 in vec2 v_TexCoord;
 
-const float offset = 1.0/768;
+const float offset = 1.0/1024;
 
 uniform sampler2D u_Texture;
 
@@ -57,9 +57,4 @@ void main()
    }
 
    color = vec4(col,1.0);
-
-
-   // vec4 texColor = texture(u_Texture,v_TexCoord);
-   // float average = (texColor.r + texColor.g + texColor.b) / 3.0f;
-   // color = vec4(average,average,average,1.0);
 };

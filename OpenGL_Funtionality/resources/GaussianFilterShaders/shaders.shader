@@ -19,7 +19,7 @@ void main()
 layout(location = 0) 
 out vec4 color;
 
-in vec2 v_TexCoord;
+in vec2 TexCoords;
 
 uniform sampler2D u_Texture;
 
@@ -30,13 +30,13 @@ void main()
 {
     vec2 tex_offset = 1.0/textureSize(u_Texture,0);
 
-    vec3 result = texture(u_texture,v_TexCoord).rgb * weight[0];
+    vec3 result = texture(u_Texture,TexCoords).rgb * weight[0];
 
     for(int i = 1; i < 5 ; i++)
     {
-        result += texture(u_texture,v_TexCoord + vec2(tex_offset.x*i,0.0)).rgb * weight[i];
+        result += texture(u_Texture,TexCoords + vec2(tex_offset.x*i,0.0)).rgb * weight[i];
 
-        result += texture(u_texture,v_TexCoord - vec2(tex_offset.x*i,0.0)).rgb * weight[i];
+        result += texture(u_Texture,TexCoords - vec2(tex_offset.x*i,0.0)).rgb * weight[i];
     }
 
     color = vec4(result,1.0);

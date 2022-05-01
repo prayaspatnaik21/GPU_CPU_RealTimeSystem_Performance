@@ -24,7 +24,7 @@ int main(void)
             shaderPath = "../resources/shaders/shaderGrey.shader";
             break;
         case 2:
-            shaderPath = "../resources/shaders/shaderGaussian.shader";
+            shaderPath = "../resources/GaussianFilterShaders/shaders.shader";
             break;
         case 3:
             shaderPath = "../resources/shaders/shaderEdgeDetector.shader";
@@ -32,6 +32,7 @@ int main(void)
         default:
             shaderPath = "../resources/shaders/shaders.shader"; 
     }
+    
 
     GLFWwindow* window;
 
@@ -44,11 +45,13 @@ int main(void)
 
     /* Create a windowed mode window and its OpenGL context */
 
-    Mat image = imread("../resources/Images/Sam_0.jpg",1);
-    //flip(image,image,0);
+    Mat image = imread("../resources/Images/Sam_1.jpg",1);
+    
+    cv::imshow(" image1", image);
+    cv::waitKey(0);
+
     std::cout << "Image Resolution" << " " << image.cols << "X" << image.rows << std::endl;
 	
-
     window = glfwCreateWindow(image.cols, image.rows, "Hello World", NULL, NULL);
     if (!window)
     {
@@ -79,44 +82,40 @@ int main(void)
 
     Transformation Transform;
 
-    glm::mat4 RotationMatrix = Transform.GetRotationMatrix(90.0f);
-    
-    auto start = high_resolution_clock::now();
+    glm::mat4 RotationMatrix = Transform.GetRotationMatrix(0.0f);
+
     Renderer RendererObject(shaderPath,RotationMatrix);
     RendererObject.AddBuffer();
     RendererObject.UnBind();
 
     RendererObject.Bind();
 
+    auto start = high_resolution_clock::now();
     auto TextureObject=std::make_shared<Texture>(image);
-    
-    //TextureObject->UnBind();
     TextureObject->Bind();
 
     RendererObject.SetUniformli();
-    RendererObject.Draw();
+    //RendererObject.Draw();
+    //glfwSwapBuffers(window);
         /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
     has been instructed to close, if so, the function returns true and the game loop stops     running, after which we can close the application */
-    std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(image.rows, image.cols, CV_8UC3);
+    // std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(image.rows, image.cols, CV_8UC3);
 
-    glReadBuffer(GL_COLOR_ATTACHMENT0);
-   
-    glGetTexImage(GL_TEXTURE_2D, 0, GL_BGR, GL_UNSIGNED_BYTE, gl_out->data);
+    // glReadBuffer(GL_COLOR_ATTACHMENT0);
+    // glReadPixels(0, 0, image.cols, image.rows,
+    //                 GL_BGR, GL_UNSIGNED_BYTE,
+    //                 gl_out->data);
+    // flip(*gl_out,*gl_out,0);
     // auto stop = high_resolution_clock::now();
+
 	// auto duration = duration_cast<microseconds>(stop - start);
 
 	// std::cout << "Time taken by function: "
-    //      << duration.count() << " microseconds" << std::endl;
-    //flip(*gl_out,*gl_out,0);
-    cv::imshow(" image1", *gl_out);
-    cv::waitKey(0);
-
-    // glClear(GL_COLOR_BUFFER_BIT);
-    // RendererObject.Draw();
-    // glfwSwapBuffers(window);
-    // glfwPollEvents(); 
-
+    //       << duration.count() << " microseconds" << std::endl;
+    
+    // cv::imshow(" image1", *gl_out);
+    // cv::waitKey(0);
 
        /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW

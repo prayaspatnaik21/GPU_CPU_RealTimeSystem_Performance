@@ -10,7 +10,7 @@ int main(void) {
 
 	// Read image in GrayScale mode
 
-	int i{0};
+	int i{4};
 	string fixedPath = "../resources/Images/Sam_";
 	string VariableFileName;
 
@@ -18,9 +18,10 @@ int main(void) {
 	{
 		Mat result;
 
-		VariableFileName = std::to_string(i)+ ".jpg";
-		string ResultPath = fixedPath + VariableFileName;
-		Mat image = imread(ResultPath,1);
+		//VariableFileName = std::to_string(i)+ ".jpg";
+		//string ResultPath = fixedPath + VariableFileName;
+		Mat image = imread("../resources/Images/Sam_1.jpg",1);
+		//Mat image = imread(ResultPath,1);
 
 		imshow("Image",image);
 		waitKey(0);
@@ -33,13 +34,16 @@ int main(void) {
 		
 		Mat rot_mat = getRotationMatrix2D( center, angle, scale );
 
-		int iterations{50};
+		//int iterations{50};
+		int iterations{1};
 
 		for(auto j = 0 ; j < iterations ; j++)
 		{
 			auto start = high_resolution_clock::now();
-			warpAffine( image,result, rot_mat, image.size() );
-
+			GaussianBlur(image, result, Size(3, 3), 0);
+			//warpAffine( image,result, rot_mat, image.size() );
+			imshow("Image",result);
+			waitKey(0);
 			auto stop = high_resolution_clock::now();
 
 			auto duration = duration_cast<microseconds>(stop - start);
