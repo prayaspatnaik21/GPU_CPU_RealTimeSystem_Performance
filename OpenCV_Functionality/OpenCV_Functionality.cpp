@@ -21,7 +21,7 @@ int main(void)
     // int Operation{0};
     // std::cin >> Operation;
 
-    bool GreyConversionOperation  = true, GaussianBlurOperation = false , RotateImageOperation = false,NormalOperation = false;
+    bool GreyConversionOperation  = false, GaussianBlurOperation = false , RotateImageOperation = true ,NormalOperation = false;
 
     // switch(Operation)
     // {
@@ -49,10 +49,10 @@ int main(void)
 	}
 	else if(RotateImageOperation)
 	{
-		cout << "Enter the angle by which you want to rotate the Image" << endl;
-		double rotationAngle{0};
-		cin >> rotationAngle;
-		RotateImageOperationFunction(rotationAngle);
+		// cout << "Enter the angle by which you want to rotate the Image" << endl;
+		// double rotationAngle{0};
+		// cin >> rotationAngle;
+		RotateImageOperationFunction(90.0f);
 	}
 	else
 	{
@@ -82,6 +82,7 @@ void GreyConversionOperationFunction()
 		for(auto j = 0 ; j < iterations ; j++)
 		{
 			auto start = high_resolution_clock::now();
+			image = imread(ResultPath,1);
 			cv::cvtColor(image, result, cv::COLOR_BGR2GRAY);
 			auto stop = high_resolution_clock::now();
 			auto duration = duration_cast<microseconds>(stop - start);
@@ -109,9 +110,6 @@ void GaussianBlurOperationFunction()
 		string ResultPath = fixedPath + VariableFileName;
 		Mat image = imread(ResultPath,1);
 
-		imshow("Image",image);
-		waitKey(0);
-
 		cout << "Image Resolution" << " " << image.cols << "X" << image.rows << endl;
 
 		int iterations{50};
@@ -119,6 +117,7 @@ void GaussianBlurOperationFunction()
 		for(auto j = 0 ; j < iterations ; j++)
 		{
 			auto start = high_resolution_clock::now();
+			Mat image = imread(ResultPath,1);
 			GaussianBlur(image, result, Size(5, 5), 0);
 			auto stop = high_resolution_clock::now();
 			auto duration = duration_cast<microseconds>(stop - start);
@@ -146,9 +145,6 @@ void RotateImageOperationFunction(double rotationAngle)
 		string ResultPath = fixedPath + VariableFileName;
 		Mat image = imread(ResultPath,1);
 
-		imshow("Image",image);
-		waitKey(0);
-
 		cout << "Image Resolution" << " " << image.cols << "X" << image.rows << endl;
 
 		Point center = Point( image.cols/2, image.rows/2 );
@@ -161,6 +157,7 @@ void RotateImageOperationFunction(double rotationAngle)
 		for(auto j = 0 ; j < iterations ; j++)
 		{
 			auto start = high_resolution_clock::now();
+			Mat image = imread(ResultPath,1);
 			warpAffine( image,result, rot_mat, image.size() );
 			auto stop = high_resolution_clock::now();
 			auto duration = duration_cast<microseconds>(stop - start);
