@@ -38,8 +38,9 @@ void Renderer::AddBuffer()
     VertexArrayobject->AddBuffer();
 }
 
-void  Renderer::SetUniformli()
+void  Renderer::SetUniformli(bool rotationEnable)
 {
     ShaderObject->SetUniform1i("u_Texture",0);
-    ShaderObject->SetUniformMatrix4fv("transform",TransformationMatrix);
+    if(rotationEnable)
+        ShaderObject->SetUniformMatrix4fv("transform",TransformationMatrix);
 }

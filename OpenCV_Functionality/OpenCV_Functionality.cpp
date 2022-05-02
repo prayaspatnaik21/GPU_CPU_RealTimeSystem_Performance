@@ -13,31 +13,31 @@ void NormalOperationFunction();
 
 int main(void) 
 {
-	std::cout << "Choose the type of Operation\n"
-            "Grey Conversion Operation 1\n"
-            "Guassian Filter Operation 2\n"
-            "Rotate Image Operation 3"<<std::endl;
+	// std::cout << "Choose the type of Operation\n"
+    //         "Grey Conversion Operation 1\n"
+    //         "Guassian Filter Operation 2\n"
+    //         "Rotate Image Operation 3"<<std::endl;
 
-    int Operation{0};
-    std::cin >> Operation;
+    // int Operation{0};
+    // std::cin >> Operation;
 
-    bool GreyConversionOperation  = false, GaussianBlurOperation = false , RotateImageOperation = false,NormalOperation = false;
+    bool GreyConversionOperation  = true, GaussianBlurOperation = false , RotateImageOperation = false,NormalOperation = false;
 
-    switch(Operation)
-    {
-        case 1:
-            GreyConversionOperation = true;
-            break;
-        case 2:
-            GaussianBlurOperation = true;
-            break;
-        case 3:
-            RotateImageOperation = true; 
-            break;
-        default:
-            NormalOperation = true;
-			break; 
-    }
+    // switch(Operation)
+    // {
+    //     case 1:
+    //         GreyConversionOperation = true;
+    //         break;
+    //     case 2:
+    //         GaussianBlurOperation = true;
+    //         break;
+    //     case 3:
+    //         RotateImageOperation = true; 
+    //         break;
+    //     default:
+    //         NormalOperation = true;
+	// 		break; 
+    // }
 
 	if(GreyConversionOperation)
 	{
@@ -74,9 +74,6 @@ void GreyConversionOperationFunction()
 		VariableFileName = std::to_string(i)+ ".jpg";
 		string ResultPath = fixedPath + VariableFileName;
 		Mat image = imread(ResultPath,1);
-
-		imshow("Image",image);
-		waitKey(0);
 
 		cout << "Image Resolution" << " " << image.cols << "X" << image.rows << endl;
 

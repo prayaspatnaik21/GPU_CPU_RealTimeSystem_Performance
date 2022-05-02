@@ -27,5 +27,5 @@ class Renderer
         void Bind();
         void UnBind();
         void AddBuffer();
-        void SetUniformli();
+        void SetUniformli(bool rotationEnable);
 };
