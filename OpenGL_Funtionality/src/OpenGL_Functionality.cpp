@@ -45,10 +45,8 @@ int main(void)
 
     /* Create a windowed mode window and its OpenGL context */
 
-    Mat image = imread("../resources/Images/Sam_1.jpg",1);
-    
-    cv::imshow(" image1", image);
-    cv::waitKey(0);
+    Mat image = imread("../resources/Images/Sam_4.jpg",1);
+    flip(image,image,0);
 
     std::cout << "Image Resolution" << " " << image.cols << "X" << image.rows << std::endl;
 	
@@ -95,18 +93,18 @@ int main(void)
     TextureObject->Bind();
 
     RendererObject.SetUniformli();
-    //RendererObject.Draw();
+    RendererObject.Draw();
     //glfwSwapBuffers(window);
         /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
     has been instructed to close, if so, the function returns true and the game loop stops     running, after which we can close the application */
-    // std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(image.rows, image.cols, CV_8UC3);
+    std::shared_ptr<cv::Mat> gl_out = std::make_shared<cv::Mat>(image.rows, image.cols, CV_8UC3);
 
-    // glReadBuffer(GL_COLOR_ATTACHMENT0);
-    // glReadPixels(0, 0, image.cols, image.rows,
-    //                 GL_BGR, GL_UNSIGNED_BYTE,
-    //                 gl_out->data);
-    // flip(*gl_out,*gl_out,0);
+    glReadBuffer(GL_COLOR_ATTACHMENT0);
+    glReadPixels(0, 0, image.cols, image.rows,
+                     GL_BGR, GL_UNSIGNED_BYTE,
+                     gl_out->data);
+    flip(*gl_out,*gl_out,0);
     // auto stop = high_resolution_clock::now();
 
 	// auto duration = duration_cast<microseconds>(stop - start);
@@ -114,8 +112,8 @@ int main(void)
 	// std::cout << "Time taken by function: "
     //       << duration.count() << " microseconds" << std::endl;
     
-    // cv::imshow(" image1", *gl_out);
-    // cv::waitKey(0);
+    cv::imshow(" image1", *gl_out);
+    cv::waitKey(0);
 
        /* Loop until the user  closes the window */
     /*The glfwWindowShouldClose function checks at the start of each loop iteration if GLFW
